@@ -15,7 +15,7 @@
 		<ApplicationTitle>Mitawi</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.mitawi</ApplicationId>
+		<ApplicationId>com.danimonettelli.mitawi</ApplicationId>
 		<ApplicationIdGuid>15123793-50ED-4A3E-A573-E8B717B4D457</ApplicationIdGuid>
 
 		<!-- Versions -->
