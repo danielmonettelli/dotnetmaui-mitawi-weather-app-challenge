@@ -1,4 +1,4 @@
-# .NET MAUI UI/UX Challenges - Mitawi
+# Migration from "Mitawi" to .NET MAUI
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/3f6e895c980848fa9aad033f53dad161)](https://app.codacy.com/gh/danielmonettelli/Mitawi?utm_source=github.com&utm_medium=referral&utm_content=danielmonettelli/Mitawi&utm_campaign=Badge_Grade_Settings)
 [![Twitter](https://img.shields.io/twitter/follow/DaniMonettelli.svg?style=social)](https://twitter.com/DaniMonettelli)
