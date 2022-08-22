@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Mitawi.Views.HomePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:models="clr-namespace:Mitawi.Models"
+    xmlns:viewmodels="clr-namespace:Mitawi.ViewModels"
+    x:Name="parentPage"
+    ios:Page.UseSafeArea="true"
+    x:DataType="viewmodels:HomeViewModel"
+    BackgroundColor="{StaticResource col_fourt}"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary Source="Styles.xaml" />
+        <ResourceDictionary Source="Orientations/HomePageOrientation.xaml" />
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <!--#region Grid Parent-->
+        <Grid
+            x:Name="gridParent"
+            Style="{StaticResource vsm_orientation_gridParent}">
+
+            <!--#region Top layer lower 1-->
+            <Border
+                x:Name="topLayerLower1"
+                BackgroundColor="{StaticResource col_thirt}"
+                Style="{StaticResource vsm_orientation_topLayerLower1}">
+                <Border.Shadow>
+                    <Shadow
+                        Brush="{StaticResource col_thirt}"
+                        Opacity="0.93"
+                        Radius="45"
+                        Offset="20,20" />
+                </Border.Shadow>
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="0,0,43,43" />
+                </Border.StrokeShape>
+            </Border>
+            <!--#endregion-->
+
+            <!--#region Top layer higher 2-->
+            <Border
+                x:Name="topLayerHigher2"
+                Stroke="{StaticResource col_twel}"
+                StrokeThickness="3"
+                Style="{StaticResource vsm_orientation_topLayerHigher2}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="0,0,45,45" />
+                </Border.StrokeShape>
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Offset="0" Color="{StaticResource col_prim}" />
+                        <GradientStop Offset="0.5" Color="{StaticResource col_sec}" />
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <Grid
+                    x:Name="gridAdminTopLayerHigher2"
+                    Padding="16,0"
+                    Style="{StaticResource vsm_orientation_gridAdminTopLayerHigher2}">
+
+                    <!--#region Top icons-->
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="8,8,8,8" />
+                        </Border.StrokeShape>
+
+                        <Image
+                            HeightRequest="40"
+                            HorizontalOptions="Center"
+                            Source="svg_main_list_outline.png"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="40" />
+                    </Border>
+
+
+                    <StackLayout
+                        x:Name="iconAndTextLocation"
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Horizontal"
+                        Spacing="6"
+                        Style="{StaticResource vsm_orientation_iconAndTextLocation}"
+                        VerticalOptions="CenterAndExpand">
+
+                        <Image Source="{OnIdiom Phone={OnPlatform Default={StaticResource icon_location_solid_phone}}, Tablet={OnPlatform Default={StaticResource icon_location_solid_tablet}}}" />
+
+                        <Label
+                            Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtHeadline5_1}},
+                                            Tablet={OnPlatform Default={StaticResource TxtHeadline4_3}}}"
+                            Text="{Binding MyPlacemark.AdminArea}" />
+                    </StackLayout>
+
+
+                    <Border
+                        x:Name="iconPicker"
+                        Style="{StaticResource vsm_orientation_iconPicker}">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="8,8,8,8" />
+                        </Border.StrokeShape>
+
+                        <Image
+                            HorizontalOptions="Center"
+                            Source="{StaticResource icon_picker_solid}"
+                            VerticalOptions="CenterAndExpand" />
+                    </Border>
+                    <!--#endregion-->
+
+                    <!--#region Updating-->
+                    <Border
+                        x:Name="updating"
+                        Margin="0,-2,0,0"
+                        BackgroundColor="Transparent"
+                        HeightRequest="{OnIdiom Phone={OnPlatform Default=29},
+                                                Tablet={OnPlatform Default=40}}"
+                        HorizontalOptions="CenterAndExpand"
+                        Stroke="{StaticResource col_ten}"
+                        StrokeThickness="2"
+                        Style="{StaticResource vsm_orientation_updating}"
+                        WidthRequest="{OnIdiom Phone={OnPlatform Default=87},
+                                               Tablet={OnPlatform Default=108}}">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="15,15,15,15" />
+                        </Border.StrokeShape>
+                        <StackLayout
+                            HorizontalOptions="CenterAndExpand"
+                            Orientation="Horizontal"
+                            Spacing="5">
+
+                            <BoxView
+                                BackgroundColor="#FFF10C"
+                                CornerRadius="{OnIdiom Phone={OnPlatform Default=2.5},
+                                                       Tablet={OnPlatform Default=3.5}}"
+                                HeightRequest="{OnIdiom Phone={OnPlatform Default=5},
+                                                        Tablet={OnPlatform Default=7}}"
+                                VerticalOptions="Center"
+                                WidthRequest="{OnIdiom Phone={OnPlatform Default=5},
+                                                       Tablet={OnPlatform Default=7}}" />
+
+                            <Label
+                                Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtCaption_1}},
+                                                Tablet={OnPlatform Default={StaticResource TxtSubtitle1_5}}}"
+                                Text="Updating"
+                                VerticalTextAlignment="Center" />
+                        </StackLayout>
+                    </Border>
+                    <!--#endregion-->
+
+                    <!--#region Image-->
+                    <Image
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Source="{Binding MyHourly.Weather[0].Icon, Converter={StaticResource CustomImageUrlScalingConverter}, ConverterParameter=10}" />
+                    <!--#endregion-->
+
+                    <!--#region Basic description of the climate-->
+                    <StackLayout
+                        x:Name="lookTemperature"
+                        Style="{StaticResource vsm_orientation_lookTemperature}"
+                        VerticalOptions="CenterAndExpand">
+                        <Label
+                            HorizontalTextAlignment="Center"
+                            Style="{OnIdiom Phone={OnPlatform Android={StaticResource TxtUnknown1_1},
+                                                              iOS={StaticResource TxtUnknown1_3}},
+                                            Tablet={OnPlatform Default={StaticResource TxtUnknown1_5}}}"
+                            Text="{Binding MyHourly.Temp, StringFormat='{0}°', Converter={StaticResource DoubleToIntConverter}}" />
+                    </StackLayout>
+
+                    <StackLayout
+                        x:Name="lookWeatherAndDt"
+                        Style="{StaticResource vsm_orientation_lookWeatherAndDt}">
+
+                        <Label
+                            HorizontalTextAlignment="Center"
+                            Style="{OnIdiom Phone={OnPlatform Android={StaticResource TxtHeadline6_1},
+                                                              iOS={StaticResource TxtUnknown1_4}},
+                                            Tablet={OnPlatform Default={StaticResource TxtHeadline4_2}}}"
+                            Text="{Binding MyHourly.Weather[0].Main}" />
+
+                        <Label
+                            Margin="0,1,0,0"
+                            HorizontalTextAlignment="Center"
+                            Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtSubtitle2_1}},
+                                            Tablet={OnPlatform Default={StaticResource TxtTitle1_1}}}"
+                            Text="{Binding Days[0].Dt, Converter={StaticResource UnixTimeToDateTimeConverter}, ConverterParameter='dddd, dd MMM'}" />
+                    </StackLayout>
+                    <!--#endregion-->
+
+                    <!--#region Dividing line-->
+                    <BoxView
+                        x:Name="dividingLine"
+                        BackgroundColor="{StaticResource co_elev}"
+                        Style="{StaticResource vsm_orientation_dividingLine}" />
+                    <!--#endregion-->
+
+                    <!--#region Complex description of the climate-->
+                    <Grid
+                        x:Name="gridComplexDescriptionClimate"
+                        Padding="4,0,4,12"
+                        ColumnDefinitions="*, Auto, *"
+                        ColumnSpacing="10"
+                        Style="{StaticResource vsm_orientation_gridComplexDescriptionClimate}">
+
+                        <StackLayout Grid.Column="0">
+
+                            <Image Source="{StaticResource icon_wind_outline}" />
+
+                            <Label
+                                Margin="0,8,0,0"
+                                HorizontalTextAlignment="Center"
+                                Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtSubtitle2_2}},
+                                                Tablet={OnPlatform Default={StaticResource TxtHeadline6_2}}}"
+                                Text="{Binding MyHourly.Wind_speed, StringFormat='{0} km/h'}" />
+
+                            <Label
+                                HorizontalTextAlignment="Center"
+                                Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtBody2_1}},
+                                                Tablet={OnPlatform Default={StaticResource TxtSubtitle1_4}}}"
+                                Text="Wind" />
+                        </StackLayout>
+
+
+                        <StackLayout Grid.Column="1">
+
+                            <Image
+                                HeightRequest="22"
+                                Source="svg_humidity_solid.png"
+                                WidthRequest="22" />
+
+                            <Label
+                                Margin="0,8,0,0"
+                                HorizontalTextAlignment="Center"
+                                Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtSubtitle2_2}},
+                                                Tablet={OnPlatform Default={StaticResource TxtHeadline6_2}}}"
+                                Text="{Binding MyHourly.Humidity, StringFormat='{0}%'}" />
+
+                            <Label
+                                HorizontalTextAlignment="Center"
+                                Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtBody2_1}},
+                                                Tablet={OnPlatform Default={StaticResource TxtSubtitle1_4}}}"
+                                Text="Humidity" />
+                        </StackLayout>
+
+
+                        <StackLayout Grid.Column="2">
+
+                            <Image
+                                HeightRequest="22"
+                                Source="svg_chance_of_rain_mix.svg"
+                                WidthRequest="22" />
+
+                            <Label
+                                Margin="0,8,0,0"
+                                HorizontalTextAlignment="Center"
+                                Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtSubtitle2_2}},
+                                                Tablet={OnPlatform Default={StaticResource TxtHeadline6_2}}}"
+                                Text="{Binding MyHourly.Wind_gust, StringFormat='{0}%', Converter={StaticResource DoubleToIntConverter}}" />
+
+                            <Label
+                                HorizontalTextAlignment="Center"
+                                Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtBody2_1}},
+                                                Tablet={OnPlatform Default={StaticResource TxtSubtitle1_4}}}"
+                                Text="Chance of rain" />
+                        </StackLayout>
+                    </Grid>
+                    <!--#endregion-->
+                </Grid>
+            </Border>
+            <!--#endregion-->
+
+            <!--#region Today and 7 days titles-->
+            <StackLayout
+                x:Name="stackTodayAnd7Days"
+                Orientation="Horizontal"
+                Style="{StaticResource vsm_orientation_stackTodayAnd7Days}">
+
+                <Label
+                    Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtHeadline6_2}},
+                                    Tablet={OnPlatform Default={StaticResource TxtHeadline5_2}}}"
+                    Text="Today"
+                    TranslationY="2"
+                    VerticalTextAlignment="Center" />
+
+                <StackLayout
+                    Padding="16,0"
+                    HorizontalOptions="EndAndExpand"
+                    Orientation="Horizontal"
+                    Spacing="6">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BindingContext.DailyForecast7DaysCommand, Source={x:Reference parentPage}}" />
+                    </StackLayout.GestureRecognizers>
+
+                    <Label
+                        Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtSubtitle1_1}},
+                                        Tablet={OnPlatform Default={StaticResource TxtTitle1_2}}}"
+                        Text="7 days"
+                        VerticalTextAlignment="Center" />
+
+                    <Image
+                        Source="{StaticResource icon_arrow_forward_outline}"
+                        TranslationY="1" />
+                </StackLayout>
+            </StackLayout>
+            <!--#endregion-->
+
+            <!--#region [Item Collections] forecast 24 hours a day-->
+            <ScrollView
+                x:Name="scrollForecast24Hours"
+                Padding="16,0"
+                Orientation="Horizontal"
+                Style="{StaticResource vsm_orientation_scrollForecast24Hours}">
+
+                <FlexLayout
+                    Padding="{OnIdiom Phone={OnPlatform Default='-8,-2,-8,0'},
+                                      Tablet={OnPlatform Default='-12,-4,-12,0'}}"
+                    AlignItems="Center"
+                    BindableLayout.ItemsSource="{Binding Hourlies}"
+                    Direction="Column"
+                    JustifyContent="Center"
+                    Wrap="Wrap">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="models:Hourly">
+                            <Border
+                                Margin="{OnIdiom Phone={OnPlatform Default='8,2,8,0'},
+                                                 Tablet={OnPlatform Default='12,4,12,0'}}"
+                                Padding="0,10"
+                                Style="{StaticResource vsm_surfaceHourly}">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Command="{Binding BindingContext.SelectedHourlyCommand, Source={x:Reference parentPage}}"
+                                        CommandParameter="{Binding .}"
+                                        Tapped="SelectedWeather_Tapped" />
+                                </Border.GestureRecognizers>
+                                <StackLayout Spacing="2">
+
+                                    <!--#region Temperature in degrees celsius-->
+                                    <Label
+                                        x:Name="labelTemperature"
+                                        HorizontalTextAlignment="Center"
+                                        Style="{StaticResource vsm_labelTemperature}"
+                                        Text="{Binding Temp, StringFormat='{0}°', Converter={StaticResource DoubleToIntConverter}}" />
+                                    <!--#endregion-->
+
+                                    <!--#region Small weather icon-->
+                                    <Image
+                                        x:Name="imageSmallWeather"
+                                        Source="{Binding Weather[0].Icon, Converter={StaticResource CustomImageUrlScalingConverter}, ConverterParameter=2}"
+                                        Style="{StaticResource vsm_imageSmallWeather}" />
+                                    <!--#endregion-->
+
+                                    <!--#region Time per hour-->
+                                    <Label
+                                        x:Name="labelHour"
+                                        HorizontalTextAlignment="Center"
+                                        Style="{StaticResource vsm_labelHour}"
+                                        Text="{Binding Dt, Converter={StaticResource UnixTimeToDateTimeConverter}, ConverterParameter=HH:mm}"
+                                        VerticalOptions="EndAndExpand" />
+                                    <!--#endregion-->
+                                </StackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </FlexLayout>
+            </ScrollView>
+            <!--#endregion-->
+        </Grid>
+        <!--#endregion-->
+    </ContentPage.Content>
+</ContentPage>

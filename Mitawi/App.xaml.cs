@@ -1,11 +1,22 @@
-﻿namespace Mitawi;
+﻿using Mitawi.Models;
+using Mitawi.Services;
+using Mitawi.Utility;
+using Mitawi.Views;
+
+namespace Mitawi;
 
 public partial class App : Application
 {
-	public App()
-	{
-		InitializeComponent();
+    public static NavigationService NavigationService { get; } = new NavigationService();
+    public static IWeatherDataService WeatherDataServie { get; } = new WeatherDataService(new WeatherDataRepository());
 
-		MainPage = new AppShell();
-	}
+    public App()
+    {
+        InitializeComponent();
+
+        NavigationService.Configure(ViewNames.HomePage, typeof(HomePage));
+        NavigationService.Configure(ViewNames.HomeDetailPage, typeof(HomeDetailPage));
+
+        MainPage = new NavigationPage(new HomePage());
+    }
 }

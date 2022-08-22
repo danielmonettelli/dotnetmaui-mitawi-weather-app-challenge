@@ -1,14 +1,17 @@
-﻿<?xml version = "1.0" encoding = "UTF-8" ?>
-<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Mitawi"
-             x:Class="Mitawi.App">
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="Mitawi.App"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
-                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+                <ResourceDictionary Source="Themes/DefaultTheme.xaml" />
+                <ResourceDictionary Source="Styles/Icons.xaml" />
+                <ResourceDictionary Source="Styles/Responsive.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
+
 </Application>

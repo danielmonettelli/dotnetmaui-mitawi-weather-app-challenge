@@ -1,0 +1,719 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    x:Class="Mitawi.Views.Styles"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converter="clr-namespace:Mitawi.Converters"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+
+    <!--#region Converters-->
+    <converter:UnixTimeToDateTimeConverter x:Key="UnixTimeToDateTimeConverter" />
+    <converter:OpenWeatherImageUrlScalingConverter x:Key="OpenWeatherImageUrlScalingConverter" />
+    <converter:CustomImageUrlScalingConverter x:Key="CustomImageUrlScalingConverter" />
+    <mct:DoubleToIntConverter x:Key="DoubleToIntConverter" />
+
+    <mct:MultiConverter x:Key="DatetimeAndFirstCharactersMultiConverter">
+        <converter:UnixTimeToDateTimeConverter />
+        <converter:StringToFirstCharactersConverter />
+    </mct:MultiConverter>
+    <x:Array
+        x:Key="DatetimeAndFirstCharactersMultiConverterParams"
+        Type="{x:Type mct:MultiConverterParameter}">
+        <mct:MultiConverterParameter
+            ConverterType="{x:Type converter:UnixTimeToDateTimeConverter}"
+            Value="dddd" />
+        <mct:MultiConverterParameter
+            ConverterType="{x:Type converter:StringToFirstCharactersConverter}"
+            Value="3" />
+    </x:Array>
+
+    <mct:MultiConverter x:Key="NegativeAndPositiveIntMultiConverter">
+        <mct:DoubleToIntConverter />
+        <converter:NegativeAndPositiveNumberConverter />
+    </mct:MultiConverter>
+    <!--#endregion-->
+
+    <!--#region Headline1-->
+
+    <!--#endregion-->
+
+
+    <!--#region Headline2-->
+    <Style
+        x:Key="TxtHeadline2_1"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#700" />
+        <Setter Property="FontSize" Value="60" />
+        <Setter Property="TextColor" Value="{StaticResource col_ten}" />
+    </Style>
+
+    <Style
+        x:Key="Span_TxtHeadline2_1"
+        TargetType="Span">
+        <Setter Property="FontFamily" Value="Roboto#700" />
+        <Setter Property="FontSize" Value="60" />
+        <Setter Property="TextColor" Value="{StaticResource col_ten}" />
+    </Style>
+    <!--#endregion-->
+
+
+    <!--#region Headline3-->
+    <Style
+        x:Key="TxtHeadline3_1"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#400" />
+        <Setter Property="FontSize" Value="48" />
+        <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+    </Style>
+    <!--#endregion-->
+
+
+    <!--#region Headline4-->
+    <Style
+        x:Key="TxtHeadline4_1"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#700" />
+        <Setter Property="FontSize" Value="34" />
+        <Setter Property="TextColor" Value="{StaticResource col_ten}" />
+    </Style>
+
+    <Style
+        x:Key="Span_TxtHeadline4_1"
+        TargetType="Span">
+        <Setter Property="FontFamily" Value="Roboto#700" />
+        <Setter Property="FontSize" Value="34" />
+        <Setter Property="TextColor" Value="{StaticResource col_ten}" />
+    </Style>
+
+    <Style
+        x:Key="TxtHeadline4_2"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#400" />
+        <Setter Property="FontSize" Value="34" />
+        <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+    </Style>
+
+    <Style
+        x:Key="TxtHeadline4_3"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#500" />
+        <Setter Property="FontSize" Value="34" />
+        <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+    </Style>
+    <!--#endregion-->
+
+
+    <!--#region Headline5-->
+    <Style
+        x:Key="TxtHeadline5_1"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#500" />
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+    </Style>
+
+    <Style
+        x:Key="TxtHeadline5_2"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#700" />
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+    </Style>
+
+    <Style
+        x:Key="TxtHeadline5_3"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#400" />
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+    </Style>
+
+    <Style
+        x:Key="TxtHeadline5_4"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#400" />
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="TextColor" Value="{StaticResource col_sept}" />
+    </Style>
+
+    <Style
+        x:Key="TxtHeadline5_5"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#500" />
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="TextColor" Value="{StaticResource col_sext}" />
+    </Style>
+    <!--#endregion-->
+
+
+    <!--#region Headline6-->
+    <Style
+        x:Key="TxtHeadline6_1"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#400" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+    </Style>
+
+    <Style
+        x:Key="TxtHeadline6_2"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#700" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+    </Style>
+
+    <Style
+        x:Key="TxtHeadline6_3"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#500" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="TextColor" Value="{StaticResource col_sext}" />
+    </Style>
+
+    <Style
+        x:Key="TxtHeadline6_4"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#500" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+    </Style>
+    <!--#endregion-->
+
+
+    <!--#region Title-->
+    <Style
+        x:Key="TxtTitle1_1"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#400" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="TextColor" Value="{StaticResource col_sept}" />
+    </Style>
+
+    <Style
+        x:Key="TxtTitle1_2"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#700" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="TextColor" Value="{StaticResource col_sext}" />
+    </Style>
+    <!--#endregion-->
+
+
+    <!--#region Subtitle1-->
+    <Style
+        x:Key="TxtSubtitle1_1"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#700" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="TextColor" Value="{StaticResource col_sext}" />
+    </Style>
+
+    <Style
+        x:Key="TxtSubtitle1_2"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#700" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+    </Style>
+
+    <Style
+        x:Key="TxtSubtitle1_3"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#400" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="TextColor" Value="{StaticResource col_sept}" />
+    </Style>
+
+    <Style
+        x:Key="TxtSubtitle1_4"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#700" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="TextColor" Value="{StaticResource col_sept}" />
+    </Style>
+
+    <Style
+        x:Key="TxtSubtitle1_5"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#500" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+    </Style>
+    <!--#endregion-->
+
+
+    <!--#region Subtitle2-->
+    <Style
+        x:Key="TxtSubtitle2_1"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#400" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextColor" Value="{StaticResource col_sept}" />
+    </Style>
+
+    <Style
+        x:Key="TxtSubtitle2_2"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#700" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+    </Style>
+    <!--#endregion-->
+
+
+    <!--#region Body1-->
+
+    <!--#endregion-->
+
+
+    <!--#region Body2-->
+    <Style
+        x:Key="TxtBody2_1"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#700" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextColor" Value="{StaticResource col_sept}" />
+    </Style>
+
+    <Style
+        x:Key="TxtBody2_2"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#700" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextColor" Value="{StaticResource col_sext}" />
+    </Style>
+    <!--#endregion-->
+
+
+    <!--#region Button-->
+
+    <!--#endregion-->
+
+
+    <!--#region Caption-->
+    <Style
+        x:Key="TxtCaption_1"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#500" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+    </Style>
+    <!--#endregion-->
+
+
+    <!--#region Overline1-->
+
+    <!--#endregion-->
+
+
+    <!--#region Overline2-->
+
+    <!--#endregion-->
+
+    <!--#region Unknown-->
+    <Style
+        x:Key="TxtUnknown1_1"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#700" />
+        <Setter Property="FontSize" Value="56" />
+        <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+    </Style>
+
+    <Style
+        x:Key="TxtUnknown1_2"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#700" />
+        <Setter Property="FontSize" Value="58" />
+        <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+    </Style>
+
+    <Style
+        x:Key="Span_TxtUnknown1_2"
+        TargetType="Span">
+        <Setter Property="FontFamily" Value="Roboto#700" />
+        <Setter Property="FontSize" Value="58" />
+        <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+    </Style>
+
+    <Style
+        x:Key="TxtUnknown1_3"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#700" />
+        <Setter Property="FontSize" Value="110" />
+        <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+    </Style>
+
+    <Style
+        x:Key="TxtUnknown1_4"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#400" />
+        <Setter Property="FontSize" Value="28" />
+        <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+    </Style>
+
+    <Style
+        x:Key="TxtUnknown1_5"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#400" />
+        <Setter Property="FontSize" Value="175" />
+        <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+    </Style>
+
+    <Style
+        x:Key="TxtUnknown1_6"
+        TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto#700" />
+        <Setter Property="FontSize" Value="100" />
+        <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+    </Style>
+
+    <Style
+        x:Key="Span_TxtUnknown1_6"
+        TargetType="Span">
+        <Setter Property="FontFamily" Value="Roboto#700" />
+        <Setter Property="FontSize" Value="100" />
+        <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+    </Style>
+    <!--#endregion-->
+
+
+    <!--#region Visual States Manager-->
+    <Style
+        x:Key="vsm_imageSmallWeather"
+        TargetType="Image">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="HeightRequest">
+                                <OnIdiom x:TypeArguments="x:Double">
+                                    <OnIdiom.Phone>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On
+                                                Platform="iOS,Android"
+                                                Value="42" />
+                                        </OnPlatform>
+                                    </OnIdiom.Phone>
+
+                                    <OnIdiom.Tablet>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On
+                                                Platform="iOS,Android"
+                                                Value="71" />
+                                        </OnPlatform>
+                                    </OnIdiom.Tablet>
+                                </OnIdiom>
+                            </Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState x:Name="Selected">
+                        <VisualState.Setters>
+                            <Setter Property="HeightRequest">
+                                <OnIdiom x:TypeArguments="x:Double">
+                                    <OnIdiom.Phone>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On
+                                                Platform="iOS,Android"
+                                                Value="50" />
+                                        </OnPlatform>
+                                    </OnIdiom.Phone>
+
+                                    <OnIdiom.Tablet>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On
+                                                Platform="iOS,Android"
+                                                Value="78" />
+                                        </OnPlatform>
+                                    </OnIdiom.Tablet>
+                                </OnIdiom>
+                            </Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+
+    <Style
+        x:Key="vsm_labelTemperature"
+        TargetType="Label">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="FontFamily" Value="Roboto#700" />
+                            <Setter Property="FontSize">
+                                <OnIdiom x:TypeArguments="x:Double">
+                                    <OnIdiom.Phone>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On
+                                                Platform="iOS,Android"
+                                                Value="20" />
+                                        </OnPlatform>
+                                    </OnIdiom.Phone>
+
+                                    <OnIdiom.Tablet>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On
+                                                Platform="iOS,Android"
+                                                Value="28" />
+                                        </OnPlatform>
+                                    </OnIdiom.Tablet>
+                                </OnIdiom>
+                            </Setter>
+                            <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState x:Name="Selected">
+                        <VisualState.Setters>
+                            <Setter Property="FontFamily" Value="Roboto#700" />
+                            <Setter Property="FontSize">
+                                <OnIdiom x:TypeArguments="x:Double">
+                                    <OnIdiom.Phone>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On
+                                                Platform="iOS,Android"
+                                                Value="24" />
+                                        </OnPlatform>
+                                    </OnIdiom.Phone>
+
+                                    <OnIdiom.Tablet>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On
+                                                Platform="iOS,Android"
+                                                Value="41" />
+                                        </OnPlatform>
+                                    </OnIdiom.Tablet>
+                                </OnIdiom>
+                            </Setter>
+                            <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+
+    <Style
+        x:Key="vsm_labelHour"
+        TargetType="Label">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="FontFamily" Value="Roboto#700" />
+                            <Setter Property="FontSize">
+                                <OnIdiom x:TypeArguments="x:Double">
+                                    <OnIdiom.Phone>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On
+                                                Platform="iOS,Android"
+                                                Value="14" />
+                                        </OnPlatform>
+                                    </OnIdiom.Phone>
+
+                                    <OnIdiom.Tablet>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On
+                                                Platform="iOS,Android"
+                                                Value="18" />
+                                        </OnPlatform>
+                                    </OnIdiom.Tablet>
+                                </OnIdiom>
+                            </Setter>
+                            <Setter Property="TextColor" Value="{StaticResource col_sext}" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState x:Name="Selected">
+                        <VisualState.Setters>
+                            <Setter Property="FontFamily" Value="Roboto#700" />
+                            <Setter Property="FontSize">
+                                <OnIdiom x:TypeArguments="x:Double">
+                                    <OnIdiom.Phone>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On
+                                                Platform="iOS,Android"
+                                                Value="16" />
+                                        </OnPlatform>
+                                    </OnIdiom.Phone>
+
+                                    <OnIdiom.Tablet>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On
+                                                Platform="iOS,Android"
+                                                Value="22" />
+                                        </OnPlatform>
+                                    </OnIdiom.Tablet>
+                                </OnIdiom>
+                            </Setter>
+                            <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+
+    <Style
+        x:Key="vsm_surfaceHourly"
+        TargetType="Border">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="Stroke" Value="{StaticResource col_oct}" />
+                            <Setter Property="StrokeThickness" Value="3" />
+                            <Setter Property="HeightRequest">
+                                <OnIdiom x:TypeArguments="x:Double">
+                                    <OnIdiom.Phone>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On
+                                                Platform="iOS,Android"
+                                                Value="90" />
+                                        </OnPlatform>
+                                    </OnIdiom.Phone>
+
+                                    <OnIdiom.Tablet>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On
+                                                Platform="iOS,Android"
+                                                Value="134" />
+                                        </OnPlatform>
+                                    </OnIdiom.Tablet>
+                                </OnIdiom>
+                            </Setter>
+                            <Setter Property="WidthRequest">
+                                <OnIdiom x:TypeArguments="x:Double">
+                                    <OnIdiom.Phone>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On
+                                                Platform="iOS,Android"
+                                                Value="80" />
+                                        </OnPlatform>
+                                    </OnIdiom.Phone>
+
+                                    <OnIdiom.Tablet>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On
+                                                Platform="iOS,Android"
+                                                Value="112" />
+                                        </OnPlatform>
+                                    </OnIdiom.Tablet>
+                                </OnIdiom>
+                            </Setter>
+                            <Setter Property="BackgroundColor" Value="Transparent" />
+                            <!--<Setter Property="CornerRadius">
+                                <OnIdiom x:TypeArguments="CornerRadius">
+                                    <OnIdiom.Phone>
+                                        <OnPlatform x:TypeArguments="CornerRadius">
+                                            <On
+                                                Platform="iOS,Android"
+                                                Value="30,30,30,30" />
+                                        </OnPlatform>
+                                    </OnIdiom.Phone>
+
+                                    <OnIdiom.Tablet>
+                                        <OnPlatform x:TypeArguments="CornerRadius">
+                                            <On
+                                                Platform="iOS,Android"
+                                                Value="40,40,40,40" />
+                                        </OnPlatform>
+                                    </OnIdiom.Tablet>
+                                </OnIdiom>
+                            </Setter>-->
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState x:Name="Selected">
+                        <VisualState.Setters>
+                            <Setter Property="Stroke" Value="{StaticResource col_non}" />
+                            <Setter Property="StrokeThickness" Value="3" />
+                            <!--<Setter Property="BackgroundGradientStops">
+                                <Setter.Value>
+                                    <yummy:GradientStopCollection>
+                                        <yummy:GradientStop
+                                            Offset="0"
+                                            Color="{StaticResource col_quat}" />
+                                        <yummy:GradientStop
+                                            Offset="0.5"
+                                            Color="{StaticResource col_qui}" />
+                                    </yummy:GradientStopCollection>
+                                </Setter.Value>
+                            </Setter>-->
+                            <Setter Property="HeightRequest">
+                                <OnIdiom x:TypeArguments="x:Double">
+                                    <OnIdiom.Phone>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On
+                                                Platform="iOS,Android"
+                                                Value="110" />
+                                        </OnPlatform>
+                                    </OnIdiom.Phone>
+
+                                    <OnIdiom.Tablet>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On
+                                                Platform="iOS,Android"
+                                                Value="168" />
+                                        </OnPlatform>
+                                    </OnIdiom.Tablet>
+                                </OnIdiom>
+                            </Setter>
+                            <Setter Property="WidthRequest">
+                                <OnIdiom x:TypeArguments="x:Double">
+                                    <OnIdiom.Phone>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On
+                                                Platform="iOS,Android"
+                                                Value="95" />
+                                        </OnPlatform>
+                                    </OnIdiom.Phone>
+
+                                    <OnIdiom.Tablet>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On
+                                                Platform="iOS,Android"
+                                                Value="138" />
+                                        </OnPlatform>
+                                    </OnIdiom.Tablet>
+                                </OnIdiom>
+                            </Setter>
+                            <Setter Property="BackgroundColor" Value="{StaticResource col_qui}" />
+                            <!--<Setter Property="CornerRadius">
+                                <OnIdiom x:TypeArguments="CornerRadius">
+                                    <OnIdiom.Phone>
+                                        <OnPlatform x:TypeArguments="CornerRadius">
+                                            <On
+                                                Platform="iOS,Android"
+                                                Value="35,35,35,35" />
+                                        </OnPlatform>
+                                    </OnIdiom.Phone>
+
+                                    <OnIdiom.Tablet>
+                                        <OnPlatform x:TypeArguments="CornerRadius">
+                                            <On
+                                                Platform="iOS,Android"
+                                                Value="45,45,45,45" />
+                                        </OnPlatform>
+                                    </OnIdiom.Tablet>
+                                </OnIdiom>
+                            </Setter>-->
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+</ResourceDictionary>

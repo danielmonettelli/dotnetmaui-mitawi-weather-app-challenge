@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Mitawi.Views.HomeDetailPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:models="clr-namespace:Mitawi.Models"
+    xmlns:viewmodels="clr-namespace:Mitawi.ViewModels"
+    x:Name="parentPage"
+    ios:Page.UseSafeArea="true"
+    x:DataType="viewmodels:HomeDetailViewModel"
+    BackgroundColor="{StaticResource col_fourt}"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary Source="Styles.xaml" />
+        <ResourceDictionary Source="Orientations/HomeDetailPageOrientation.xaml" />
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <!--#region Grid Parent-->
+        <Grid
+            x:Name="gridParent"
+            Style="{StaticResource vsm_orientation_gridParent}">
+
+            <!--#region Top layer lower 1-->
+            <Border
+                x:Name="topLayerLower1"
+                BackgroundColor="{StaticResource col_thirt}"
+                Style="{StaticResource vsm_orientation_topLayerLower1}">
+                <Border.Shadow>
+                    <Shadow
+                        Brush="{StaticResource col_thirt}"
+                        Opacity="0.93"
+                        Radius="45"
+                        Offset="20,20" />
+                </Border.Shadow>
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="0,0,43,43" />
+                </Border.StrokeShape>
+            </Border>
+            <!--#endregion-->
+
+            <!--#region Top layer higher 2-->
+            <Border
+                x:Name="topLayerHigher2"
+                Stroke="{StaticResource col_twel}"
+                StrokeThickness="3"
+                Style="{StaticResource vsm_orientation_topLayerHigher2}">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="0,0,45,45" />
+                </Border.StrokeShape>
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="1,0">
+                        <GradientStop Offset="0" Color="{StaticResource col_prim}" />
+                        <GradientStop Offset="0.5" Color="{StaticResource col_sec}" />
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <Grid
+                    Padding="16,0"
+                    ColumnDefinitions="48, *, 48"
+                    RowDefinitions="48, 24, *, 14, 2, 14, Auto">
+
+                    <!--#region Top icons-->
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="8,8,8,8" />
+                        </Border.StrokeShape>
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+                        </Border.GestureRecognizers>
+
+                        <Image
+                            HeightRequest="40"
+                            HorizontalOptions="Center"
+                            Source="svg_circle_arrow_backward_outline.png"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="40" />
+                    </Border>
+
+                    <StackLayout
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Horizontal"
+                        Spacing="6"
+                        VerticalOptions="CenterAndExpand">
+
+                        <Image Source="{OnIdiom Phone={OnPlatform Default={StaticResource icon_calendar_outline_phone}}, Tablet={OnPlatform Default={StaticResource icon_calendar_outline_tablet}}}" />
+
+                        <Label
+                            Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtHeadline5_1}},
+                                            Tablet={OnPlatform Default={StaticResource TxtHeadline4_3}}}"
+                            Text="7 days" />
+                    </StackLayout>
+
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="2">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="8,8,8,8" />
+                        </Border.StrokeShape>
+
+                        <Image
+                            HorizontalOptions="Center"
+                            Source="{StaticResource icon_picker_solid}"
+                            VerticalOptions="CenterAndExpand" />
+                    </Border>
+                    <!--#endregion-->
+
+                    <!--#region Tomorrow's weather-->
+                    <Grid
+                        Grid.Row="2"
+                        Grid.ColumnSpan="3"
+                        ColumnDefinitions="50*, 50*"
+                        ColumnSpacing="20">
+
+                        <Image
+                            x:Name="imageTomorrowWeather"
+                            Grid.Column="0"
+                            Source="{Binding MyDaily.Weather[0].Icon, Converter={StaticResource CustomImageUrlScalingConverter}, ConverterParameter=10}"
+                            Style="{StaticResource vsm_orientation_imageTomorrowWeather}" />
+
+
+                        <StackLayout
+                            Grid.Column="1"
+                            VerticalOptions="Center">
+
+                            <Label
+                                Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtHeadline6_1}},
+                                                Tablet={OnPlatform Default={StaticResource TxtHeadline3_1}}}"
+                                Text="Tomorrow" />
+
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span
+                                            Style="{OnIdiom Phone={OnPlatform Default={StaticResource Span_TxtUnknown1_2}},
+                                                            Tablet={OnPlatform Default={StaticResource Span_TxtUnknown1_6}}}"
+                                            Text="{Binding MyDaily.Temp.Max, Converter={StaticResource DoubleToIntConverter}}" />
+                                        <Span
+                                            Style="{OnIdiom Phone={OnPlatform Default={StaticResource Span_TxtHeadline4_1}},
+                                                            Tablet={OnPlatform Default={StaticResource Span_TxtHeadline2_1}}}"
+                                            Text="{Binding MyDaily.Temp.Min, Converter={StaticResource DoubleToIntConverter}, StringFormat='/{0}°'}" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label
+                                LineBreakMode="CharacterWrap"
+                                Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtSubtitle1_3}},
+                                                Tablet={OnPlatform Default={StaticResource TxtHeadline5_4}}}">
+                                <Label.Text>
+                                    <MultiBinding StringFormat="{}{0} - {1}">
+                                        <Binding Path="MyDaily.Weather[0].Main" />
+                                        <Binding Path="MyDaily.Weather[0].Description" />
+                                    </MultiBinding>
+                                </Label.Text>
+                            </Label>
+                        </StackLayout>
+                    </Grid>
+                    <!--#endregion-->
+
+                    <!--#region Dividing line-->
+                    <BoxView
+                        Grid.Row="4"
+                        Grid.ColumnSpan="3"
+                        BackgroundColor="{StaticResource co_elev}" />
+                    <!--#endregion-->
+
+                    <!--#region Complex description of the climate-->
+                    <Grid
+                        Grid.Row="6"
+                        Grid.ColumnSpan="3"
+                        Padding="4,0,4,12"
+                        ColumnDefinitions="*, Auto, *"
+                        ColumnSpacing="10">
+
+                        <StackLayout Grid.Column="0">
+
+                            <Image Source="{StaticResource icon_wind_outline}" />
+
+                            <Label
+                                Margin="0,8,0,0"
+                                HorizontalTextAlignment="Center"
+                                Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtSubtitle2_2}},
+                                                Tablet={OnPlatform Default={StaticResource TxtHeadline6_2}}}"
+                                Text="{Binding MyDaily.Wind_speed, StringFormat='{0} km/h'}" />
+
+                            <Label
+                                HorizontalTextAlignment="Center"
+                                Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtBody2_1}},
+                                                Tablet={OnPlatform Default={StaticResource TxtSubtitle1_4}}}"
+                                Text="Wind" />
+                        </StackLayout>
+
+
+                        <StackLayout Grid.Column="1">
+
+                            <Image
+                                HeightRequest="22"
+                                Source="svg_humidity_solid.png"
+                                WidthRequest="22" />
+
+                            <Label
+                                Margin="0,8,0,0"
+                                HorizontalTextAlignment="Center"
+                                Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtSubtitle2_2}},
+                                                Tablet={OnPlatform Default={StaticResource TxtHeadline6_2}}}"
+                                Text="{Binding MyDaily.Humidity, StringFormat='{0}%'}" />
+
+                            <Label
+                                HorizontalTextAlignment="Center"
+                                Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtBody2_1}},
+                                                Tablet={OnPlatform Default={StaticResource TxtSubtitle1_4}}}"
+                                Text="Humidity" />
+                        </StackLayout>
+
+
+                        <StackLayout Grid.Column="2">
+
+                            <Image
+                                HeightRequest="22"
+                                Source="svg_chance_of_rain_mix.png"
+                                WidthRequest="22" />
+
+                            <Label
+                                Margin="0,8,0,0"
+                                HorizontalTextAlignment="Center"
+                                Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtSubtitle2_2}},
+                                                Tablet={OnPlatform Default={StaticResource TxtHeadline6_2}}}"
+                                Text="{Binding MyDaily.Wind_gust, StringFormat='{0}%', Converter={StaticResource DoubleToIntConverter}}" />
+
+                            <Label
+                                HorizontalTextAlignment="Center"
+                                Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtBody2_1}},
+                                                Tablet={OnPlatform Default={StaticResource TxtSubtitle1_4}}}"
+                                Text="Chance of rain" />
+                        </StackLayout>
+                    </Grid>
+                    <!--#endregion-->
+                </Grid>
+            </Border>
+            <!--#endregion-->
+
+            <!--#region [Item Collections] Weekly weather-->
+            <ScrollView
+                x:Name="scrollWeeklyWeather"
+                Style="{StaticResource vsm_orientation_scrollWeeklyWeather}">
+
+                <StackLayout
+                    BindableLayout.ItemsSource="{Binding Days}"
+                    Spacing="{OnIdiom Phone={OnPlatform Default=16},
+                                      Tablet={OnPlatform Default=24}}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="models:Daily">
+                            <Grid>
+
+                                <Grid.RowDefinitions>
+                                    <!--  0  -->
+                                    <RowDefinition Height="{OnIdiom Phone={OnPlatform Default=48}, Tablet={OnPlatform Default=50}}" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <!--  0  -->
+                                    <ColumnDefinition Width="{OnIdiom Phone={OnPlatform Default=48}, Tablet={OnPlatform Default=50}}" />
+                                    <!--  1  -->
+                                    <ColumnDefinition Width="50*" />
+                                    <!--  2  -->
+                                    <ColumnDefinition Width="{OnIdiom Phone={OnPlatform Default=44}, Tablet={OnPlatform Default=52}}" />
+                                    <!--  3  -->
+                                    <ColumnDefinition Width="{OnIdiom Phone={OnPlatform Default=70}, Tablet={OnPlatform Default=75}}" />
+                                    <!--  4  -->
+                                    <ColumnDefinition Width="50*" />
+                                    <!--  5  -->
+                                    <ColumnDefinition Width="{OnIdiom Phone={OnPlatform Default=48}, Tablet={OnPlatform Default=50}}" />
+                                    <!--  6  -->
+                                    <ColumnDefinition Width="{OnIdiom Phone={OnPlatform Default=48}, Tablet={OnPlatform Default=50}}" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label
+                                    Grid.Column="0"
+                                    MaxLines="2"
+                                    Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtHeadline6_3}},
+                                                    Tablet={OnPlatform Default={StaticResource TxtHeadline5_5}}}"
+                                    Text="{Binding Dt, Converter={StaticResource DatetimeAndFirstCharactersMultiConverter}, ConverterParameter={StaticResource DatetimeAndFirstCharactersMultiConverterParams}}"
+                                    VerticalTextAlignment="Center" />
+
+                                <Image
+                                    Grid.Column="2"
+                                    Source="{Binding Weather[0].Icon, Converter={StaticResource CustomImageUrlScalingConverter}, ConverterParameter=2}" />
+
+                                <Label
+                                    Grid.Column="3"
+                                    Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtHeadline6_3}},
+                                                    Tablet={OnPlatform Default={StaticResource TxtHeadline5_5}}}"
+                                    Text="{Binding Weather[0].Main}"
+                                    VerticalTextAlignment="Center" />
+
+                                <Label
+                                    Grid.Column="5"
+                                    HorizontalTextAlignment="End"
+                                    Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtHeadline6_4}},
+                                                    Tablet={OnPlatform Default={StaticResource TxtHeadline5_1}}}"
+                                    Text="{Binding Temp.Max, Converter={StaticResource NegativeAndPositiveIntMultiConverter}, StringFormat='{0}°'}"
+                                    VerticalTextAlignment="Center" />
+
+                                <Label
+                                    Grid.Column="6"
+                                    HorizontalTextAlignment="End"
+                                    Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtHeadline6_3}},
+                                                    Tablet={OnPlatform Default={StaticResource TxtHeadline5_5}}}"
+                                    Text="{Binding Temp.Min, Converter={StaticResource NegativeAndPositiveIntMultiConverter}, StringFormat='{0}°'}"
+                                    VerticalTextAlignment="Center" />
+                            </Grid>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
+            <!--#endregion-->
+        </Grid>
+        <!--#endregion-->
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:FontIcons="clr-namespace:Mitawi.CodeFontIcons;assembly=Mitawi">
+
+    <!--#region FontImageSource INTERFACES-->
+    <FontImageSource
+        x:Key="icon_picker_solid"
+        FontFamily="CustomFontIcons"
+        Glyph="{x:Static FontIcons:CustomFontIcons.icon_picker_solid}"
+        Size="24"
+        Color="{StaticResource col_ter}" />
+
+    <FontImageSource
+        x:Key="icon_location_solid_phone"
+        FontFamily="CustomFontIcons"
+        Glyph="{x:Static FontIcons:CustomFontIcons.icon_location_solid}"
+        Size="18"
+        Color="{StaticResource col_ter}" />
+
+    <FontImageSource
+        x:Key="icon_location_solid_tablet"
+        FontFamily="CustomFontIcons"
+        Glyph="{x:Static FontIcons:CustomFontIcons.icon_location_solid}"
+        Size="25"
+        Color="{StaticResource col_ter}" />
+
+    <FontImageSource
+        x:Key="icon_degree_symbol_outline"
+        FontFamily="CustomFontIcons"
+        Glyph="{x:Static FontIcons:CustomFontIcons.icon_degree_symbol_outline}"
+        Size="15"
+        Color="#87B3F5" />
+
+    <FontImageSource
+        x:Key="icon_wind_outline"
+        FontFamily="CustomFontIcons"
+        Glyph="{x:Static FontIcons:CustomFontIcons.icon_wind_outline}"
+        Size="22"
+        Color="{StaticResource col_ter}" />
+
+    <FontImageSource
+        x:Key="icon_arrow_forward_outline"
+        FontFamily="CustomFontIcons"
+        Glyph="{x:Static FontIcons:CustomFontIcons.icon_arrow_forward_outline}"
+        Size="12"
+        Color="{StaticResource col_sext}" />
+
+    <FontImageSource
+        x:Key="icon_calendar_outline_phone"
+        FontFamily="CustomFontIcons"
+        Glyph="{x:Static FontIcons:CustomFontIcons.icon_calendar_outline}"
+        Size="19.5"
+        Color="{StaticResource col_ter}" />
+
+    <FontImageSource
+        x:Key="icon_calendar_outline_tablet"
+        FontFamily="CustomFontIcons"
+        Glyph="{x:Static FontIcons:CustomFontIcons.icon_calendar_outline}"
+        Size="27"
+        Color="{StaticResource col_ter}" />
+    <!--#endregion-->
+
+</ResourceDictionary>
