@@ -2,7 +2,8 @@
 <ResourceDictionary
     x:Class="Mitawi.Views.HomePageOrientation"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
 
     <Style
         x:Key="vsm_orientation_gridParent"
@@ -25,28 +26,7 @@
                                         <!--  3  -->
                                         <RowDefinition Height="6" />
                                         <!--  4  -->
-                                        <RowDefinition Height="130" />
-                                        <!--<RowDefinition>
-                                            <RowDefinition.Height>
-                                                <OnIdiom x:TypeArguments="GridLength">
-                                                    <OnIdiom.Phone>
-                                                        <OnPlatform x:TypeArguments="GridLength">
-                                                            <On
-                                                                Platform="iOS,Android"
-                                                                Value="130" />
-                                                        </OnPlatform>
-                                                    </OnIdiom.Phone>
-
-                                                    <OnIdiom.Tablet>
-                                                        <OnPlatform x:TypeArguments="GridLength">
-                                                            <On
-                                                                Platform="iOS,Android"
-                                                                Value="188" />
-                                                        </OnPlatform>
-                                                    </OnIdiom.Tablet>
-                                                </OnIdiom>
-                                            </RowDefinition.Height>
-                                        </RowDefinition>-->
+                                        <RowDefinition Height="{OnIdiom Phone=130, Tablet=188}" />
                                     </RowDefinitionCollection>
                                 </Setter.Value>
                             </Setter>
