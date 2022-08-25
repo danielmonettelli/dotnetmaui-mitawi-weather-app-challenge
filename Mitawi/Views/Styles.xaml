@@ -613,25 +613,9 @@
                                 </OnIdiom>
                             </Setter>
                             <Setter Property="BackgroundColor" Value="Transparent" />
-                            <!--<Setter Property="CornerRadius">
-                                <OnIdiom x:TypeArguments="CornerRadius">
-                                    <OnIdiom.Phone>
-                                        <OnPlatform x:TypeArguments="CornerRadius">
-                                            <On
-                                                Platform="iOS,Android"
-                                                Value="30,30,30,30" />
-                                        </OnPlatform>
-                                    </OnIdiom.Phone>
-
-                                    <OnIdiom.Tablet>
-                                        <OnPlatform x:TypeArguments="CornerRadius">
-                                            <On
-                                                Platform="iOS,Android"
-                                                Value="40,40,40,40" />
-                                        </OnPlatform>
-                                    </OnIdiom.Tablet>
-                                </OnIdiom>
-                            </Setter>-->
+                            <Setter Property="StrokeShape">
+                                <RoundRectangle CornerRadius="{OnIdiom Phone='30,30,30,30', Tablet='40,40,40,40'}" />
+                            </Setter>
                         </VisualState.Setters>
                     </VisualState>
 
@@ -639,18 +623,12 @@
                         <VisualState.Setters>
                             <Setter Property="Stroke" Value="{StaticResource col_non}" />
                             <Setter Property="StrokeThickness" Value="3" />
-                            <!--<Setter Property="BackgroundGradientStops">
-                                <Setter.Value>
-                                    <yummy:GradientStopCollection>
-                                        <yummy:GradientStop
-                                            Offset="0"
-                                            Color="{StaticResource col_quat}" />
-                                        <yummy:GradientStop
-                                            Offset="0.5"
-                                            Color="{StaticResource col_qui}" />
-                                    </yummy:GradientStopCollection>
-                                </Setter.Value>
-                            </Setter>-->
+                            <Setter Property="Background">
+                                <LinearGradientBrush EndPoint="1,0">
+                                    <GradientStop Offset="0" Color="{StaticResource col_quat}" />
+                                    <GradientStop Offset="0.5" Color="{StaticResource col_qui}" />
+                                </LinearGradientBrush>
+                            </Setter>
                             <Setter Property="HeightRequest">
                                 <OnIdiom x:TypeArguments="x:Double">
                                     <OnIdiom.Phone>
@@ -690,25 +668,9 @@
                                 </OnIdiom>
                             </Setter>
                             <Setter Property="BackgroundColor" Value="{StaticResource col_qui}" />
-                            <!--<Setter Property="CornerRadius">
-                                <OnIdiom x:TypeArguments="CornerRadius">
-                                    <OnIdiom.Phone>
-                                        <OnPlatform x:TypeArguments="CornerRadius">
-                                            <On
-                                                Platform="iOS,Android"
-                                                Value="35,35,35,35" />
-                                        </OnPlatform>
-                                    </OnIdiom.Phone>
-
-                                    <OnIdiom.Tablet>
-                                        <OnPlatform x:TypeArguments="CornerRadius">
-                                            <On
-                                                Platform="iOS,Android"
-                                                Value="45,45,45,45" />
-                                        </OnPlatform>
-                                    </OnIdiom.Tablet>
-                                </OnIdiom>
-                            </Setter>-->
+                            <Setter Property="StrokeShape">
+                                <RoundRectangle CornerRadius="{OnIdiom Phone='35,35,35,35', Tablet='45,45,45,45'}" />
+                            </Setter>
                         </VisualState.Setters>
                     </VisualState>
                 </VisualStateGroup>
