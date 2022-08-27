@@ -254,7 +254,7 @@
                             <Image
                                 HeightRequest="22"
                                 Source="svg_chance_of_rain_mix.svg"
-                                WidthRequest="22" />
+                                WidthRequest="40" />
 
                             <Label
                                 Margin="0,8,0,0"
