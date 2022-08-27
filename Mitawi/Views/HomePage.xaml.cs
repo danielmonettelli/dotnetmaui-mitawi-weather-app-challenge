@@ -1,4 +1,5 @@
-﻿using Mitawi.Utility;
+﻿using CommunityToolkit.Maui.Layouts;
+using Mitawi.Utility;
 
 namespace Mitawi.Views
 {
@@ -14,7 +15,7 @@ namespace Mitawi.Views
             BindingContext = ViewModelLocator.HomeViewModel;
         }
 
-        private void HomePage_Orientation(object sender, System.EventArgs e)
+        private void HomePage_Orientation(object sender, EventArgs e)
         {
             string visualStateOrientation = Height > Width ? "Portrait" : "Landscape";
 
@@ -31,14 +32,15 @@ namespace Mitawi.Views
             VisualStateManager.GoToState(gridComplexDescriptionClimate, visualStateOrientation);
             VisualStateManager.GoToState(stackTodayAnd7Days, visualStateOrientation);
             VisualStateManager.GoToState(scrollForecast24Hours, visualStateOrientation);
+            VisualStateManager.GoToState(uniformForecast24Hours, visualStateOrientation);
         }
 
-        private void SelectedWeather_Tapped(object sender, System.EventArgs e)
+        private void SelectedWeather_Tapped(object sender, EventArgs e)
         {
             VisualElement surfaceWeather = sender as VisualElement;
-            FlexLayout parent = surfaceWeather.Parent as FlexLayout;
+            UniformItemsLayout parent = surfaceWeather.Parent as UniformItemsLayout;
 
-            foreach (View child in parent.Children)
+            foreach (View child in parent.Children.Cast<View>())
             {
                 VisualStateManager.GoToState(child, "Normal");
                 ChangeSurfaceControls(child, false);
@@ -47,7 +49,7 @@ namespace Mitawi.Views
             ChangeSurfaceControls(surfaceWeather, true);
         }
 
-        private void ChangeSurfaceControls(VisualElement child, bool isSelected)
+        private static void ChangeSurfaceControls(VisualElement child, bool isSelected)
         {
             Label labelTemperature = child.FindByName<Label>("labelTemperature");
             Image imageSmallWeather = child.FindByName<Image>("imageSmallWeather");

@@ -401,7 +401,7 @@
                                         <OnPlatform x:TypeArguments="x:Double">
                                             <On
                                                 Platform="iOS,Android"
-                                                Value="71" />
+                                                Value="42" />
                                         </OnPlatform>
                                     </OnIdiom.Tablet>
                                 </OnIdiom>
@@ -425,7 +425,7 @@
                                         <OnPlatform x:TypeArguments="x:Double">
                                             <On
                                                 Platform="iOS,Android"
-                                                Value="78" />
+                                                Value="50" />
                                         </OnPlatform>
                                     </OnIdiom.Tablet>
                                 </OnIdiom>
@@ -461,7 +461,7 @@
                                         <OnPlatform x:TypeArguments="x:Double">
                                             <On
                                                 Platform="iOS,Android"
-                                                Value="28" />
+                                                Value="20" />
                                         </OnPlatform>
                                     </OnIdiom.Tablet>
                                 </OnIdiom>
@@ -487,7 +487,7 @@
                                         <OnPlatform x:TypeArguments="x:Double">
                                             <On
                                                 Platform="iOS,Android"
-                                                Value="41" />
+                                                Value="24" />
                                         </OnPlatform>
                                     </OnIdiom.Tablet>
                                 </OnIdiom>
@@ -524,7 +524,7 @@
                                         <OnPlatform x:TypeArguments="x:Double">
                                             <On
                                                 Platform="iOS,Android"
-                                                Value="18" />
+                                                Value="14" />
                                         </OnPlatform>
                                     </OnIdiom.Tablet>
                                 </OnIdiom>
@@ -550,7 +550,7 @@
                                         <OnPlatform x:TypeArguments="x:Double">
                                             <On
                                                 Platform="iOS,Android"
-                                                Value="22" />
+                                                Value="16" />
                                         </OnPlatform>
                                     </OnIdiom.Tablet>
                                 </OnIdiom>
@@ -580,7 +580,7 @@
                                         <OnPlatform x:TypeArguments="x:Double">
                                             <On
                                                 Platform="iOS,Android"
-                                                Value="90" />
+                                                Value="120" />
                                         </OnPlatform>
                                     </OnIdiom.Phone>
 
@@ -588,7 +588,7 @@
                                         <OnPlatform x:TypeArguments="x:Double">
                                             <On
                                                 Platform="iOS,Android"
-                                                Value="134" />
+                                                Value="120" />
                                         </OnPlatform>
                                     </OnIdiom.Tablet>
                                 </OnIdiom>
@@ -607,14 +607,14 @@
                                         <OnPlatform x:TypeArguments="x:Double">
                                             <On
                                                 Platform="iOS,Android"
-                                                Value="112" />
+                                                Value="80" />
                                         </OnPlatform>
                                     </OnIdiom.Tablet>
                                 </OnIdiom>
                             </Setter>
                             <Setter Property="BackgroundColor" Value="Transparent" />
                             <Setter Property="StrokeShape">
-                                <RoundRectangle CornerRadius="{OnIdiom Phone='30,30,30,30', Tablet='40,40,40,40'}" />
+                                <RoundRectangle CornerRadius="{OnIdiom Phone='30,30,30,30', Tablet='30,30,30,30'}" />
                             </Setter>
                         </VisualState.Setters>
                     </VisualState>
@@ -635,7 +635,7 @@
                                         <OnPlatform x:TypeArguments="x:Double">
                                             <On
                                                 Platform="iOS,Android"
-                                                Value="110" />
+                                                Value="126" />
                                         </OnPlatform>
                                     </OnIdiom.Phone>
 
@@ -643,7 +643,7 @@
                                         <OnPlatform x:TypeArguments="x:Double">
                                             <On
                                                 Platform="iOS,Android"
-                                                Value="168" />
+                                                Value="126" />
                                         </OnPlatform>
                                     </OnIdiom.Tablet>
                                 </OnIdiom>
@@ -662,14 +662,14 @@
                                         <OnPlatform x:TypeArguments="x:Double">
                                             <On
                                                 Platform="iOS,Android"
-                                                Value="138" />
+                                                Value="95" />
                                         </OnPlatform>
                                     </OnIdiom.Tablet>
                                 </OnIdiom>
                             </Setter>
                             <Setter Property="BackgroundColor" Value="{StaticResource col_qui}" />
                             <Setter Property="StrokeShape">
-                                <RoundRectangle CornerRadius="{OnIdiom Phone='35,35,35,35', Tablet='45,45,45,45'}" />
+                                <RoundRectangle CornerRadius="{OnIdiom Phone='35,35,35,35', Tablet='35,35,35,35'}" />
                             </Setter>
                         </VisualState.Setters>
                     </VisualState>

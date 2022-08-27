@@ -312,17 +312,13 @@
             <ScrollView
                 x:Name="scrollForecast24Hours"
                 Padding="16,0"
-                Orientation="Horizontal"
                 Style="{StaticResource vsm_orientation_scrollForecast24Hours}">
 
-                <FlexLayout
-                    Padding="{OnIdiom Phone={OnPlatform Default='-8,-2,-8,0'},
-                                      Tablet={OnPlatform Default='-12,-4,-12,0'}}"
-                    AlignItems="Center"
+                <mct:UniformItemsLayout
+                    x:Name="uniformForecast24Hours"
+                    Margin="-5,0"
                     BindableLayout.ItemsSource="{Binding Hourlies}"
-                    Direction="Column"
-                    JustifyContent="Center"
-                    Wrap="Wrap">
+                    Style="{StaticResource vsm_orientation_uniformForecast24Hours}">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate x:DataType="models:Hourly">
                             <Border
@@ -365,7 +361,7 @@
                             </Border>
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
-                </FlexLayout>
+                </mct:UniformItemsLayout>
             </ScrollView>
             <!--#endregion-->
         </Grid>
