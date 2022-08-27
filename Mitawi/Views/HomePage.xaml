@@ -66,7 +66,8 @@
                     <!--#region Top icons-->
                     <Border
                         Grid.Row="0"
-                        Grid.Column="0">
+                        Grid.Column="0"
+                        BackgroundColor="Transparent">
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="8,8,8,8" />
                         </Border.StrokeShape>
@@ -99,6 +100,7 @@
 
                     <Border
                         x:Name="iconPicker"
+                        BackgroundColor="Transparent"
                         Style="{StaticResource vsm_orientation_iconPicker}">
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="8,8,8,8" />

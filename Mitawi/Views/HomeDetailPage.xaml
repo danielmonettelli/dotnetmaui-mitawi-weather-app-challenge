@@ -53,7 +53,7 @@
                     <RoundRectangle CornerRadius="0,0,45,45" />
                 </Border.StrokeShape>
                 <Border.Background>
-                    <LinearGradientBrush EndPoint="1,0">
+                    <LinearGradientBrush EndPoint="0,1">
                         <GradientStop Offset="0" Color="{StaticResource col_prim}" />
                         <GradientStop Offset="0.5" Color="{StaticResource col_sec}" />
                     </LinearGradientBrush>
@@ -67,7 +67,8 @@
                     <!--#region Top icons-->
                     <Border
                         Grid.Row="0"
-                        Grid.Column="0">
+                        Grid.Column="0"
+                        BackgroundColor="Transparent">
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="8,8,8,8" />
                         </Border.StrokeShape>
@@ -101,7 +102,8 @@
 
                     <Border
                         Grid.Row="0"
-                        Grid.Column="2">
+                        Grid.Column="2"
+                        BackgroundColor="Transparent">
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="8,8,8,8" />
                         </Border.StrokeShape>
