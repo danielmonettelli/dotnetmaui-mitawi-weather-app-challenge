@@ -41,11 +41,11 @@ namespace Mitawi.ViewModels
         }
 
         [RelayCommand]
-        private void SelectedHourly(Hourly selectedHourly)
+        private void SelectedHourly(Hourly hourly)
         {
-            if (selectedHourly is not null)
+            if (hourly is not null)
             {
-                MyHourly = selectedHourly;
+                MyHourly = hourly;
             }
         }
 
