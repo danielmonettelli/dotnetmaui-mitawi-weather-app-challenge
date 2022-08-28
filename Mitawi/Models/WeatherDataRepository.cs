@@ -21,50 +21,20 @@ namespace Mitawi.Models
         {
             _httpClient = new HttpClient();
         }
+
         public async Task<WeatherData> GetAllWeatherDataAsync()
         {
-            Location location = await Geolocation.Default.GetLocationAsync();
-            Uri url = new(GenerateRequestUri(APIConstants.OpenWeatherMapEndpoint, location.Latitude, location.Longitude));
-
-            HttpResponseMessage response = await _httpClient.GetAsync(url);
-
-            if (response.IsSuccessStatusCode)
-            {
-                string content = await response.Content.ReadAsStringAsync();
-                return JsonSerializer.Deserialize<WeatherData>(content);
-            }
-            return null;
+            return await GetAsyncMethodFactory<WeatherData>(TypeMethod.GetAllWeatherDataAsync);
         }
 
         public async Task<List<Hourly>> GetHourliesAsync()
         {
-            Location location = await Geolocation.Default.GetLocationAsync();
-            Uri url = new(GenerateRequestUri(APIConstants.OpenWeatherMapEndpoint, location.Latitude, location.Longitude));
-
-            HttpResponseMessage response = await _httpClient.GetAsync(url);
-
-            if (response.IsSuccessStatusCode)
-            {
-                string content = await response.Content.ReadAsStringAsync();
-                return JsonSerializer.Deserialize<WeatherData>(content).Hourly;
-            }
-            return null;
+            return await GetAsyncMethodFactory<List<Hourly>>(TypeMethod.GetHourliesAsync);
         }
 
         public async Task<List<Daily>> GetDaysAsync()
         {
-            Location location = await Geolocation.Default.GetLocationAsync();
-            Uri url = new(GenerateRequestUri(APIConstants.OpenWeatherMapEndpoint, location.Latitude, location.Longitude));
-
-            HttpResponseMessage response = await _httpClient.GetAsync(url);
-
-            if (response.IsSuccessStatusCode)
-            {
-                string content = await response.Content.ReadAsStringAsync();
-                return JsonSerializer.Deserialize<WeatherData>(content).Daily;
-            }
-            return null;
-
+            return await GetAsyncMethodFactory<List<Daily>>(TypeMethod.GetDaysAsync);
         }
 
         public async Task<Placemark> GetPlacemarkAsync()
@@ -76,5 +46,44 @@ namespace Mitawi.Models
             return placemark;
         }
 
+        public async Task<T> GetAsyncMethodFactory<T>(TypeMethod typeMethod) where T : class
+        {
+            Location location = await Geolocation.Default.GetLocationAsync();
+            Uri url = new(GenerateRequestUri(APIConstants.OpenWeatherMapEndpoint, location.Latitude, location.Latitude));
+
+            HttpResponseMessage response = await _httpClient.GetAsync(url);
+
+            if (response.IsSuccessStatusCode)
+            {
+                string content = await response.Content.ReadAsStringAsync();
+                return GetDeserializedContent<T>(typeMethod, content);
+            }
+
+            return null;
+        }
+
+        public static T GetDeserializedContent<T>(TypeMethod typeMethod, string content) where T : class
+        {
+            switch (typeMethod)
+            {
+                case TypeMethod.GetAllWeatherDataAsync:
+                    return JsonSerializer.Deserialize<WeatherData>(content) as T;
+                case TypeMethod.GetHourliesAsync:
+                    return JsonSerializer.Deserialize<WeatherData>(content).Hourly as T;
+                case TypeMethod.GetDaysAsync:
+                    return JsonSerializer.Deserialize<WeatherData>(content).Daily as T;
+                default:
+                    throw new ArgumentException($"Invalid method type: {typeMethod}");
+            }
+        }
+
     }
+
+    public enum TypeMethod
+    {
+        GetAllWeatherDataAsync,
+        GetHourliesAsync,
+        GetDaysAsync
+    }
+
 }
