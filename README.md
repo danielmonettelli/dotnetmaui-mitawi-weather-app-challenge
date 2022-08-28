@@ -1,13 +1,13 @@
 # Migration from "Mitawi" to .NET MAUI
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3f6e895c980848fa9aad033f53dad161)](https://app.codacy.com/gh/danielmonettelli/Mitawi?utm_source=github.com&utm_medium=referral&utm_content=danielmonettelli/Mitawi&utm_campaign=Badge_Grade_Settings)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/e94a0589360d46c7a5a5e586f7b3a99a)](https://www.codacy.com/gh/danimonettelli/netmaui-mitawi-app-challenge/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=danimonettelli/netmaui-mitawi-app-challenge&amp;utm_campaign=Badge_Grade)
 [![Twitter](https://img.shields.io/twitter/follow/DaniMonettelli.svg?style=social)](https://twitter.com/DaniMonettelli)
 
-[![Xamarin Mobile CI](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/actions/workflows/mobile.yml/badge.svg)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/actions/workflows/mobile.yml)
+[![.NET MAUI CI](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/actions/workflows/mobile.yml/badge.svg)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/actions/workflows/mobile.yml)
 
 [![Open Source ❤](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](#open-source-)  [![licence](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/blob/main/LICENSE)
 
-[![Stars](https://img.shields.io/github/stars/danimonettelli/Mitawi)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/stargazers) [![Forks](https://img.shields.io/github/forks/danimonettelli/Mitawi)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/network/members) [![Pull Requests](https://img.shields.io/github/issues-pr/danimonettelli/Mitawi)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/pulls) [![Issues](https://img.shields.io/github/issues/danimonettelli/Mitawi)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/issues) [![Contributors](https://img.shields.io/github/contributors/danimonettelli/Mitawi?color=2b9348)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/graphs/contributors)
+[![Stars](https://img.shields.io/github/stars/danimonettelli/netmaui-mitawi-app-challenge)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/stargazers) [![Forks](https://img.shields.io/github/forks/danimonettelli/netmaui-mitawi-app-challenge)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/network/members) [![Pull Requests](https://img.shields.io/github/issues-pr/danimonettelli/netmaui-mitawi-app-challenge)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/pulls) [![Issues](https://img.shields.io/github/issues/danimonettelli/netmaui-mitawi-app-challenge)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/issues) [![Contributors](https://img.shields.io/github/contributors/danimonettelli/netmaui-mitawi-app-challenge?color=2b9348)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/graphs/contributors)
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/A0A49B3UQ)
 
