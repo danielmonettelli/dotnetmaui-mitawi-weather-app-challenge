@@ -134,15 +134,17 @@
                             Orientation="Horizontal"
                             Spacing="5">
 
-                            <BoxView
-                                BackgroundColor="#FFF10C"
-                                CornerRadius="{OnIdiom Phone={OnPlatform Default=2.5},
-                                                       Tablet={OnPlatform Default=3.5}}"
-                                HeightRequest="{OnIdiom Phone={OnPlatform Default=5},
-                                                        Tablet={OnPlatform Default=7}}"
-                                VerticalOptions="Center"
-                                WidthRequest="{OnIdiom Phone={OnPlatform Default=5},
-                                                       Tablet={OnPlatform Default=7}}" />
+                            <Path
+                                Fill="#FFF10C"
+                                VerticalOptions="Center">
+                                <Path.Data>
+                                    <EllipseGeometry
+                                        RadiusX="{OnIdiom Phone={OnPlatform Default=3},
+                                                          Tablet={OnPlatform Default=5}}"
+                                        RadiusY="{OnIdiom Phone={OnPlatform Default=3},
+                                                          Tablet={OnPlatform Default=5}}" />
+                                </Path.Data>
+                            </Path>
 
                             <Label
                                 Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtCaption_1}},

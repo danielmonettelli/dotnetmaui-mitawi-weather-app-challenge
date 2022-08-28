@@ -29,13 +29,13 @@
                 x:Name="topLayerLower1"
                 BackgroundColor="{StaticResource col_thirt}"
                 Style="{StaticResource vsm_orientation_topLayerLower1}">
-                <Border.Shadow>
+                <!--<Border.Shadow>
                     <Shadow
                         Brush="{StaticResource col_thirt}"
                         Opacity="0.93"
                         Radius="45"
                         Offset="20,20" />
-                </Border.Shadow>
+                </Border.Shadow>-->
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="0,0,43,43" />
                 </Border.StrokeShape>
