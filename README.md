@@ -9,7 +9,7 @@
 
 [![Stars](https://img.shields.io/github/stars/danimonettelli/netmaui-mitawi-app-challenge)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/stargazers) [![Forks](https://img.shields.io/github/forks/danimonettelli/netmaui-mitawi-app-challenge)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/network/members) [![Pull Requests](https://img.shields.io/github/issues-pr/danimonettelli/netmaui-mitawi-app-challenge)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/pulls) [![Issues](https://img.shields.io/github/issues/danimonettelli/netmaui-mitawi-app-challenge)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/issues) [![Contributors](https://img.shields.io/github/contributors/danimonettelli/netmaui-mitawi-app-challenge?color=2b9348)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/graphs/contributors)
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/A0A49B3UQ)
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/danielmonettelli)
 
 [![GitHub Social Preview](https://raw.githubusercontent.com/danimonettelli/netmaui-mitawi-app-challenge/main/Assets/Mitawi_GitHub_Social_Preview.png)](#GitHub-Social-Preview)
 
@@ -29,8 +29,8 @@
       </a>
     </td>
      <td align="center" valign="top">
-      <a href="https://www.linkedin.com/in/danimonettelli/">
-        <img width="150" src="https://github.com/danimonettelli.png"/><br>
+      <a href="https://www.linkedin.com/in/danielmonettelli/">
+        <img width="150" src="https://github.com/danielmonettelli.png"/><br>
         <sub>
           <b>Daniel Monettelli</b>
           <br>
