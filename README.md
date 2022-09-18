@@ -1,17 +1,17 @@
 # Migration from "Mitawi" to .NET MAUI
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/e94a0589360d46c7a5a5e586f7b3a99a)](https://www.codacy.com/gh/danimonettelli/netmaui-mitawi-app-challenge/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=danimonettelli/netmaui-mitawi-app-challenge&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/e8e906ee7af444a9984b1f103df28d34)](https://www.codacy.com/gh/danielmonettelli/netmaui-mitawi-app-challenge/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=danielmonettelli/netmaui-mitawi-app-challenge&amp;utm_campaign=Badge_Grade)
 [![Twitter](https://img.shields.io/twitter/follow/DaniMonettelli.svg?style=social)](https://twitter.com/DaniMonettelli)
 
-[![.NET MAUI CI](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/actions/workflows/mobile.yml/badge.svg)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/actions/workflows/mobile.yml)
+[![.NET MAUI CI](https://github.com/danielmonettelli/netmaui-mitawi-app-challenge/actions/workflows/mobile.yml/badge.svg)](https://github.com/danielmonettelli/netmaui-mitawi-app-challenge/actions/workflows/mobile.yml)
 
-[![Open Source ❤](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](#open-source-)  [![licence](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/blob/main/LICENSE)
+[![Open Source ❤](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](#open-source-)  [![licence](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/danielmonettelli/netmaui-mitawi-app-challenge/blob/main/LICENSE)
 
-[![Stars](https://img.shields.io/github/stars/danimonettelli/netmaui-mitawi-app-challenge)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/stargazers) [![Forks](https://img.shields.io/github/forks/danimonettelli/netmaui-mitawi-app-challenge)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/network/members) [![Pull Requests](https://img.shields.io/github/issues-pr/danimonettelli/netmaui-mitawi-app-challenge)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/pulls) [![Issues](https://img.shields.io/github/issues/danimonettelli/netmaui-mitawi-app-challenge)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/issues) [![Contributors](https://img.shields.io/github/contributors/danimonettelli/netmaui-mitawi-app-challenge?color=2b9348)](https://github.com/danimonettelli/netmaui-mitawi-app-challenge/graphs/contributors)
+[![Stars](https://img.shields.io/github/stars/danielmonettelli/netmaui-mitawi-app-challenge)](https://github.com/danielmonettelli/netmaui-mitawi-app-challenge/stargazers) [![Forks](https://img.shields.io/github/forks/danielmonettelli/netmaui-mitawi-app-challenge)](https://github.com/danielmonettelli/netmaui-mitawi-app-challenge/network/members) [![Pull Requests](https://img.shields.io/github/issues-pr/danielmonettelli/netmaui-mitawi-app-challenge)](https://github.com/danielmonettelli/netmaui-mitawi-app-challenge/pulls) [![Issues](https://img.shields.io/github/issues/danielmonettelli/netmaui-mitawi-app-challenge)](https://github.com/danielmonettelli/netmaui-mitawi-app-challenge/issues) [![Contributors](https://img.shields.io/github/contributors/danielmonettelli/netmaui-mitawi-app-challenge?color=2b9348)](https://github.com/danielmonettelli/netmaui-mitawi-app-challenge/graphs/contributors)
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/danielmonettelli)
 
-[![GitHub Social Preview](https://raw.githubusercontent.com/danimonettelli/netmaui-mitawi-app-challenge/main/Assets/Mitawi_GitHub_Social_Preview.png)](#GitHub-Social-Preview)
+[![GitHub Social Preview](https://raw.githubusercontent.com/danielmonettelli/netmaui-mitawi-app-challenge/main/Assets/Mitawi_GitHub_Social_Preview.png)](#GitHub-Social-Preview)
 
 ## 👥 Contributions Core
 
@@ -20,7 +20,7 @@
   <tr>
     <td align="center" valign="top">
       <a href="https://www.linkedin.com/in/vitaliy-dorozhko-985767118/">
-        <img width="150" src="https://raw.githubusercontent.com/danimonettelli/netmaui-mitawi-app-challenge/main/Assets/Vitaliy_Dorozhko.jpg"/><br>
+        <img width="150" src="https://raw.githubusercontent.com/danielmonettelli/netmaui-mitawi-app-challenge/main/Assets/Vitaliy_Dorozhko.jpg"/><br>
         <sub>
           <b>Vitaliy Dorozhko</b>
           <br>
@@ -46,23 +46,23 @@
 
 Go to https://openweathermap.org and click on **Sign in**.
 
-[![OpenWeather Part1](https://raw.githubusercontent.com/danimonettelli/netmaui-mitawi-app-challenge/main/Assets/OpenWeather_Part1.jpg)](#OpenWeather-Part1)
+[![OpenWeather Part1](https://raw.githubusercontent.com/danielmonettelli/netmaui-mitawi-app-challenge/main/Assets/OpenWeather_Part1.jpg)](#OpenWeather-Part1)
 
 Create your **Account** on OpenWeather.
 
-[![OpenWeather Part2](https://raw.githubusercontent.com/danimonettelli/netmaui-mitawi-app-challenge/main/Assets/OpenWeather_Part2.jpg)](#OpenWeather-Part2)
+[![OpenWeather Part2](https://raw.githubusercontent.com/danielmonettelli/netmaui-mitawi-app-challenge/main/Assets/OpenWeather_Part2.jpg)](#OpenWeather-Part2)
 
 Click **API Keys**.
 
-[![OpenWeather Part3](https://raw.githubusercontent.com/danimonettelli/netmaui-mitawi-app-challenge/main/Assets/OpenWeather_Part3.jpg)](#OpenWeather-Part3)
+[![OpenWeather Part3](https://raw.githubusercontent.com/danielmonettelli/netmaui-mitawi-app-challenge/main/Assets/OpenWeather_Part3.jpg)](#OpenWeather-Part3)
 
 Enter the **API key name** and then click **Generate**.
 
-[![OpenWeather Part4](https://raw.githubusercontent.com/danimonettelli/netmaui-mitawi-app-challenge/main/Assets/OpenWeather_Part4.jpg)](#OpenWeather-Part4)
+[![OpenWeather Part4](https://raw.githubusercontent.com/danielmonettelli/netmaui-mitawi-app-challenge/main/Assets/OpenWeather_Part4.jpg)](#OpenWeather-Part4)
 
 Add your **API key**, and voila, you can run the app.
 
-[![OpenWeather Part5](https://raw.githubusercontent.com/danimonettelli/netmaui-mitawi-app-challenge/main/Assets/OpenWeather_Part5.jpg)](#OpenWeather-Part5)
+[![OpenWeather Part5](https://raw.githubusercontent.com/danielmonettelli/netmaui-mitawi-app-challenge/main/Assets/OpenWeather_Part5.jpg)](#OpenWeather-Part5)
 
 ## Open Source ❤
 
