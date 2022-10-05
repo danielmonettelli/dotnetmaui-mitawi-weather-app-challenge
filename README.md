@@ -66,7 +66,23 @@ Add your **API key**, and voila, you can run the app.
 
 ## Steps to generate the Sentry.Maui DSN
 
-[![SentryMAUI_Part1](https://raw.githubusercontent.com/danielmonettelli/netmaui-mitawi-app-challenge/main/Assets/SentryMAUI_Part1.png)](#SentryMAUI-Part1)
+[![SentryMAUI Part1](https://raw.githubusercontent.com/danielmonettelli/netmaui-mitawi-app-challenge/main/Assets/SentryMAUI_Part1.png)](#SentryMAUI-Part1)
+
+[![SentryMAUI Part2](https://raw.githubusercontent.com/danielmonettelli/netmaui-mitawi-app-challenge/main/Assets/SentryMAUI_Part2.png)](#SentryMAUI-Part2)
+
+[![SentryMAUI Part3](https://raw.githubusercontent.com/danielmonettelli/netmaui-mitawi-app-challenge/main/Assets/SentryMAUI_Part3.png)](#SentryMAUI-Part3)
+
+[![SentryMAUI Part4](https://raw.githubusercontent.com/danielmonettelli/netmaui-mitawi-app-challenge/main/Assets/SentryMAUI_Part4.png)](#SentryMAUI-Part4)
+
+[![SentryMAUI Part5](https://raw.githubusercontent.com/danielmonettelli/netmaui-mitawi-app-challenge/main/Assets/SentryMAUI_Part5.png)](#SentryMAUI-Part5)
+
+[![SentryMAUI Part6](https://raw.githubusercontent.com/danielmonettelli/netmaui-mitawi-app-challenge/main/Assets/SentryMAUI_Part6.png)](#SentryMAUI-Part6)
+
+[![SentryMAUI Part7](https://raw.githubusercontent.com/danielmonettelli/netmaui-mitawi-app-challenge/main/Assets/SentryMAUI_Part7.png)](#SentryMAUI-Part7)
+
+[![SentryMAUI Part9](https://raw.githubusercontent.com/danielmonettelli/netmaui-mitawi-app-challenge/main/Assets/SentryMAUI_Part9.png)](#SentryMAUI-Part9)
+
+[![SentryMAUI Part8](https://raw.githubusercontent.com/danielmonettelli/netmaui-mitawi-app-challenge/main/Assets/SentryMAUI_Part8.png)](#SentryMAUI-Part8)
 
 ## Open Source ❤
 
