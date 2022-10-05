@@ -66,6 +66,8 @@ Add your **API key**, and voila, you can run the app.
 
 ## Steps to generate the Sentry.Maui DSN
 
+Guide through the documentation https://docs.sentry.io/platforms/dotnet/guides/maui/.
+
 [![SentryMAUI Part1](https://raw.githubusercontent.com/danielmonettelli/netmaui-mitawi-app-challenge/main/Assets/SentryMAUI_Part1.png)](#SentryMAUI-Part1)
 
 [![SentryMAUI Part2](https://raw.githubusercontent.com/danielmonettelli/netmaui-mitawi-app-challenge/main/Assets/SentryMAUI_Part2.png)](#SentryMAUI-Part2)
