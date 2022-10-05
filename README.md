@@ -64,6 +64,10 @@ Add your **API key**, and voila, you can run the app.
 
 [![OpenWeather Part5](https://raw.githubusercontent.com/danielmonettelli/netmaui-mitawi-app-challenge/main/Assets/OpenWeather_Part5.jpg)](#OpenWeather-Part5)
 
+## Steps to generate the Sentry.Maui DSN
+
+[![SentryMAUI_Part1](https://raw.githubusercontent.com/danielmonettelli/netmaui-mitawi-app-challenge/main/Assets/SentryMAUI_Part1.png)](#SentryMAUI-Part1)
+
 ## Open Source ❤
 
 - All my contributions are open source, with the purpose of providing a grain of knowledge to the Xamarin Community and .NET MAUI Community.
