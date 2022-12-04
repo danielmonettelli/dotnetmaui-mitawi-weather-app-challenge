@@ -10,6 +10,7 @@ on:
       - 'LICENSE'
       - 'README.md'
       - 'Design/**'
+      - 'Assets/**'
   pull_request:
     branches:
       - "*"
@@ -19,6 +20,7 @@ on:
       - 'LICENSE'
       - 'README.md'
       - 'Design/**'
+      - 'Assets/**'
 
 jobs:
   Build_Android:
