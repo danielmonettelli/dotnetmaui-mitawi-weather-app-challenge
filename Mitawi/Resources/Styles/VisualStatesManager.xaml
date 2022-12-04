@@ -92,7 +92,7 @@
                         <VisualState.Setters>
                             <Setter Property="Stroke" Value="{StaticResource col_oct}" />
                             <Setter Property="StrokeThickness" Value="3" />
-                            <Setter Property="HeightRequest" Value="{OnIdiom Phone=130, Tablet=120}" />
+                            <Setter Property="HeightRequest" Value="{OnIdiom Phone=120, Tablet=120}" />
                             <Setter Property="WidthRequest" Value="{OnIdiom Phone=80, Tablet=80}" />
                             <Setter Property="BackgroundColor" Value="Transparent" />
                             <Setter Property="StrokeShape" Value="{RoundRectangle CornerRadius={OnIdiom Phone='30,30,30,30', Tablet='30,30,30,30'}}" />
@@ -109,7 +109,7 @@
                                     <GradientStop Offset="0.5" Color="{StaticResource col_qui}" />
                                 </LinearGradientBrush>
                             </Setter>
-                            <Setter Property="HeightRequest" Value="{OnIdiom Phone=140, Tablet=126}" />
+                            <Setter Property="HeightRequest" Value="{OnIdiom Phone=126, Tablet=126}" />
                             <Setter Property="WidthRequest" Value="{OnIdiom Phone=95, Tablet=95}" />
                             <Setter Property="BackgroundColor" Value="{StaticResource col_qui}" />
                             <Setter Property="StrokeShape" Value="{RoundRectangle CornerRadius={OnIdiom Phone='35,35,35,35', Tablet='35,35,35,35'}}" />
