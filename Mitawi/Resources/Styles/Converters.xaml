@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converter="clr-namespace:Mitawi.Converters"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+
+    <!--#region Converters-->
+    <converter:UnixTimeToDateTimeConverter x:Key="UnixTimeToDateTimeConverter" />
+    <converter:OpenWeatherImageUrlScalingConverter x:Key="OpenWeatherImageUrlScalingConverter" />
+    <converter:CustomImageUrlScalingConverter x:Key="CustomImageUrlScalingConverter" />
+    <mct:DoubleToIntConverter x:Key="DoubleToIntConverter" />
+
+    <mct:MultiConverter x:Key="DatetimeAndFirstCharactersMultiConverter">
+        <converter:UnixTimeToDateTimeConverter />
+        <converter:StringToFirstCharactersConverter />
+    </mct:MultiConverter>
+    <x:Array
+        x:Key="DatetimeAndFirstCharactersMultiConverterParams"
+        Type="{x:Type mct:MultiConverterParameter}">
+        <mct:MultiConverterParameter
+            ConverterType="{x:Type converter:UnixTimeToDateTimeConverter}"
+            Value="dddd" />
+        <mct:MultiConverterParameter
+            ConverterType="{x:Type converter:StringToFirstCharactersConverter}"
+            Value="3" />
+    </x:Array>
+
+    <mct:MultiConverter x:Key="NegativeAndPositiveIntMultiConverter">
+        <mct:DoubleToIntConverter />
+        <converter:NegativeAndPositiveNumberConverter />
+    </mct:MultiConverter>
+    <!--#endregion-->
+
+</ResourceDictionary>

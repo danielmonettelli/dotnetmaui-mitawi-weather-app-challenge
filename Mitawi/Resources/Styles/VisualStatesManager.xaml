@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!--#region Visual States Manager-->
+    <Style
+        x:Key="vsm_imageSmallWeather"
+        TargetType="Image">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="HeightRequest" Value="{OnIdiom Phone=42, Tablet=42}" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState x:Name="Selected">
+                        <VisualState.Setters>
+                            <Setter Property="HeightRequest" Value="{OnIdiom Phone=50, Tablet=50}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+
+    <Style
+        x:Key="vsm_labelTemperature"
+        TargetType="Label">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="FontFamily" Value="Roboto#700" />
+                            <Setter Property="FontSize" Value="{OnIdiom Phone=20, Tablet=20}" />
+                            <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState x:Name="Selected">
+                        <VisualState.Setters>
+                            <Setter Property="FontFamily" Value="Roboto#700" />
+                            <Setter Property="FontSize" Value="{OnIdiom Phone=24, Tablet=24}" />
+                            <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+
+    <Style
+        x:Key="vsm_labelHour"
+        TargetType="Label">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="FontFamily" Value="Roboto#700" />
+                            <Setter Property="FontSize" Value="{OnIdiom Phone=14, Tablet=14}" />
+                            <Setter Property="TextColor" Value="{StaticResource col_sext}" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState x:Name="Selected">
+                        <VisualState.Setters>
+                            <Setter Property="FontFamily" Value="Roboto#700" />
+                            <Setter Property="FontSize" Value="{OnIdiom Phone=16, Tablet=16}" />
+                            <Setter Property="TextColor" Value="{StaticResource col_ter}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+
+    <Style
+        x:Key="vsm_surfaceHourly"
+        TargetType="Border">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="Stroke" Value="{StaticResource col_oct}" />
+                            <Setter Property="StrokeThickness" Value="3" />
+                            <Setter Property="HeightRequest" Value="{OnIdiom Phone=130, Tablet=120}" />
+                            <Setter Property="WidthRequest" Value="{OnIdiom Phone=80, Tablet=80}" />
+                            <Setter Property="BackgroundColor" Value="Transparent" />
+                            <Setter Property="StrokeShape" Value="{RoundRectangle CornerRadius={OnIdiom Phone='30,30,30,30', Tablet='30,30,30,30'}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState x:Name="Selected">
+                        <VisualState.Setters>
+                            <Setter Property="Stroke" Value="{StaticResource col_non}" />
+                            <Setter Property="StrokeThickness" Value="3" />
+                            <Setter Property="Background">
+                                <LinearGradientBrush EndPoint="1,0">
+                                    <GradientStop Offset="0" Color="{StaticResource col_quat}" />
+                                    <GradientStop Offset="0.5" Color="{StaticResource col_qui}" />
+                                </LinearGradientBrush>
+                            </Setter>
+                            <Setter Property="HeightRequest" Value="{OnIdiom Phone=140, Tablet=126}" />
+                            <Setter Property="WidthRequest" Value="{OnIdiom Phone=95, Tablet=95}" />
+                            <Setter Property="BackgroundColor" Value="{StaticResource col_qui}" />
+                            <Setter Property="StrokeShape" Value="{RoundRectangle CornerRadius={OnIdiom Phone='35,35,35,35', Tablet='35,35,35,35'}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+
+</ResourceDictionary>

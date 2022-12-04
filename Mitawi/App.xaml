@@ -7,9 +7,12 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Themes/DefaultTheme.xaml" />
-                <ResourceDictionary Source="Styles/Icons.xaml" />
-                <ResourceDictionary Source="Styles/Responsive.xaml" />
+                <ResourceDictionary Source="Resources/Themes/DefaultTheme.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Labels.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Icons.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Bases.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Converters.xaml" />
+                <ResourceDictionary Source="Resources/Styles/VisualStatesManager.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
