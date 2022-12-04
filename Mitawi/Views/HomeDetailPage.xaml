@@ -14,7 +14,6 @@
     NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Resources>
-        <ResourceDictionary Source="Styles.xaml" />
         <ResourceDictionary Source="Orientations/HomeDetailPageOrientation.xaml" />
     </ContentPage.Resources>
 
