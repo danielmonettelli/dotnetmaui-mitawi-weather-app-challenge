@@ -88,11 +88,11 @@
                         Style="{StaticResource vsm_orientation_iconAndTextLocation}"
                         VerticalOptions="CenterAndExpand">
 
-                        <Image Source="{OnIdiom Phone={OnPlatform Default={StaticResource icon_location_solid_phone}}, Tablet={OnPlatform Default={StaticResource icon_location_solid_tablet}}}" />
+                        <Image Source="{OnIdiom Phone={StaticResource icon_location_solid_phone}, Tablet={StaticResource icon_location_solid_tablet}}" />
 
                         <Label
-                            Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtHeadline5_1}},
-                                            Tablet={OnPlatform Default={StaticResource TxtHeadline4_3}}}"
+                            Style="{OnIdiom Phone={StaticResource TxtHeadline5_1},
+                                            Tablet={StaticResource TxtHeadline4_3}}"
                             Text="{Binding MyPlacemark.AdminArea}" />
                     </StackLayout>
 
@@ -117,14 +117,14 @@
                         x:Name="updating"
                         Margin="0,-2,0,0"
                         BackgroundColor="Transparent"
-                        HeightRequest="{OnIdiom Phone={OnPlatform Default=29},
-                                                Tablet={OnPlatform Default=40}}"
+                        HeightRequest="{OnIdiom Phone=29,
+                                                Tablet=40}"
                         HorizontalOptions="CenterAndExpand"
                         Stroke="{StaticResource col_ten}"
                         StrokeThickness="2"
                         Style="{StaticResource vsm_orientation_updating}"
-                        WidthRequest="{OnIdiom Phone={OnPlatform Default=87},
-                                               Tablet={OnPlatform Default=108}}">
+                        WidthRequest="{OnIdiom Phone=87,
+                                               Tablet=108}">
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="15,15,15,15" />
                         </Border.StrokeShape>
@@ -138,16 +138,16 @@
                                 VerticalOptions="Center">
                                 <Path.Data>
                                     <EllipseGeometry
-                                        RadiusX="{OnIdiom Phone={OnPlatform Default=3},
-                                                          Tablet={OnPlatform Default=5}}"
-                                        RadiusY="{OnIdiom Phone={OnPlatform Default=3},
-                                                          Tablet={OnPlatform Default=5}}" />
+                                        RadiusX="{OnIdiom Phone=3,
+                                                          Tablet=5}"
+                                        RadiusY="{OnIdiom Phone=3,
+                                                          Tablet=5}" />
                                 </Path.Data>
                             </Path>
 
                             <Label
-                                Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtCaption_1}},
-                                                Tablet={OnPlatform Default={StaticResource TxtSubtitle1_5}}}"
+                                Style="{OnIdiom Phone={StaticResource TxtCaption_1},
+                                                Tablet={StaticResource TxtSubtitle1_5}}"
                                 Text="Updating"
                                 VerticalTextAlignment="Center" />
                         </StackLayout>
@@ -170,7 +170,7 @@
                             HorizontalTextAlignment="Center"
                             Style="{OnIdiom Phone={OnPlatform Android={StaticResource TxtUnknown1_1},
                                                               iOS={StaticResource TxtUnknown1_3}},
-                                            Tablet={OnPlatform Default={StaticResource TxtUnknown1_5}}}"
+                                            Tablet={StaticResource TxtUnknown1_5}}"
                             Text="{Binding MyHourly.Temp, StringFormat='{0}°', Converter={StaticResource DoubleToIntConverter}}" />
                     </StackLayout>
 
@@ -182,14 +182,14 @@
                             HorizontalTextAlignment="Center"
                             Style="{OnIdiom Phone={OnPlatform Android={StaticResource TxtHeadline6_1},
                                                               iOS={StaticResource TxtUnknown1_4}},
-                                            Tablet={OnPlatform Default={StaticResource TxtHeadline4_2}}}"
+                                            Tablet={StaticResource TxtHeadline4_2}}"
                             Text="{Binding MyHourly.Weather[0].Main}" />
 
                         <Label
                             Margin="0,1,0,0"
                             HorizontalTextAlignment="Center"
-                            Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtSubtitle2_1}},
-                                            Tablet={OnPlatform Default={StaticResource TxtTitle1_1}}}"
+                            Style="{OnIdiom Phone={StaticResource TxtSubtitle2_1},
+                                            Tablet={StaticResource TxtTitle1_1}}"
                             Text="{Binding Days[0].Dt, Converter={StaticResource UnixTimeToDateTimeConverter}, ConverterParameter='dddd, dd MMM'}" />
                     </StackLayout>
                     <!--#endregion-->
@@ -216,14 +216,14 @@
                             <Label
                                 Margin="0,8,0,0"
                                 HorizontalTextAlignment="Center"
-                                Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtSubtitle2_2}},
-                                                Tablet={OnPlatform Default={StaticResource TxtHeadline6_2}}}"
+                                Style="{OnIdiom Phone={StaticResource TxtSubtitle2_2},
+                                                Tablet={StaticResource TxtHeadline6_2}}"
                                 Text="{Binding MyHourly.Wind_speed, StringFormat='{0} km/h'}" />
 
                             <Label
                                 HorizontalTextAlignment="Center"
-                                Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtBody2_1}},
-                                                Tablet={OnPlatform Default={StaticResource TxtSubtitle1_4}}}"
+                                Style="{OnIdiom Phone={StaticResource TxtBody2_1},
+                                                Tablet={StaticResource TxtSubtitle1_4}}"
                                 Text="Wind" />
                         </StackLayout>
 
@@ -238,14 +238,14 @@
                             <Label
                                 Margin="0,8,0,0"
                                 HorizontalTextAlignment="Center"
-                                Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtSubtitle2_2}},
-                                                Tablet={OnPlatform Default={StaticResource TxtHeadline6_2}}}"
+                                Style="{OnIdiom Phone={StaticResource TxtSubtitle2_2},
+                                                Tablet={StaticResource TxtHeadline6_2}}"
                                 Text="{Binding MyHourly.Humidity, StringFormat='{0}%'}" />
 
                             <Label
                                 HorizontalTextAlignment="Center"
-                                Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtBody2_1}},
-                                                Tablet={OnPlatform Default={StaticResource TxtSubtitle1_4}}}"
+                                Style="{OnIdiom Phone={StaticResource TxtBody2_1},
+                                                Tablet={StaticResource TxtSubtitle1_4}}"
                                 Text="Humidity" />
                         </StackLayout>
 
@@ -260,14 +260,14 @@
                             <Label
                                 Margin="0,8,0,0"
                                 HorizontalTextAlignment="Center"
-                                Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtSubtitle2_2}},
-                                                Tablet={OnPlatform Default={StaticResource TxtHeadline6_2}}}"
+                                Style="{OnIdiom Phone={StaticResource TxtSubtitle2_2},
+                                                Tablet={StaticResource TxtHeadline6_2}}"
                                 Text="{Binding MyHourly.Wind_gust, StringFormat='{0}%', Converter={StaticResource DoubleToIntConverter}}" />
 
                             <Label
                                 HorizontalTextAlignment="Center"
-                                Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtBody2_1}},
-                                                Tablet={OnPlatform Default={StaticResource TxtSubtitle1_4}}}"
+                                Style="{OnIdiom Phone={StaticResource TxtBody2_1},
+                                                Tablet={StaticResource TxtSubtitle1_4}}"
                                 Text="Chance of rain" />
                         </StackLayout>
                     </Grid>
@@ -283,8 +283,8 @@
                 Style="{StaticResource vsm_orientation_stackTodayAnd7Days}">
 
                 <Label
-                    Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtHeadline6_2}},
-                                    Tablet={OnPlatform Default={StaticResource TxtHeadline5_2}}}"
+                    Style="{OnIdiom Phone={StaticResource TxtHeadline6_2},
+                                    Tablet={StaticResource TxtHeadline5_2}}"
                     Text="Today"
                     TranslationY="2"
                     VerticalTextAlignment="Center" />
@@ -299,8 +299,8 @@
                     </StackLayout.GestureRecognizers>
 
                     <Label
-                        Style="{OnIdiom Phone={OnPlatform Default={StaticResource TxtSubtitle1_1}},
-                                        Tablet={OnPlatform Default={StaticResource TxtTitle1_2}}}"
+                        Style="{OnIdiom Phone={StaticResource TxtSubtitle1_1},
+                                        Tablet={StaticResource TxtTitle1_2}}"
                         Text="7 days"
                         VerticalTextAlignment="Center" />
 
@@ -325,8 +325,8 @@
                     <BindableLayout.ItemTemplate>
                         <DataTemplate x:DataType="models:Hourly">
                             <Border
-                                Margin="{OnIdiom Phone={OnPlatform Default='8,2,8,0'},
-                                                 Tablet={OnPlatform Default='12,4,12,0'}}"
+                                Margin="{OnIdiom Phone='8,2,8,0',
+                                                 Tablet='12,4,12,0'}"
                                 Padding="0,10"
                                 Style="{StaticResource vsm_surfaceHourly}">
                                 <Border.GestureRecognizers>
