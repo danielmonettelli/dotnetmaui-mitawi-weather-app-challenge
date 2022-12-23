@@ -52,6 +52,7 @@
 	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Maui" Version="1.2.0" />
 	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+	  <PackageReference Include="Maui.Skeleton" Version="2.0.0" />
 	  <PackageReference Include="OnScreenSizeMarkup.Maui" Version="2.0.1" />
 	  <PackageReference Include="Sentry.Maui" Version="3.20.1-preview.2" />
 	</ItemGroup>
