@@ -49,7 +49,7 @@ namespace Mitawi.Models
         public async Task<T> GetAsyncMethodFactory<T>(TypeMethod typeMethod) where T : class
         {
             Location location = await Geolocation.Default.GetLocationAsync();
-            Uri url = new(GenerateRequestUri(APIConstants.OpenWeatherMapEndpoint, location.Latitude, location.Latitude));
+            Uri url = new(GenerateRequestUri(APIConstants.OpenWeatherMapEndpoint, location.Latitude, location.Longitude));
 
             HttpResponseMessage response = await _httpClient.GetAsync(url);
 
