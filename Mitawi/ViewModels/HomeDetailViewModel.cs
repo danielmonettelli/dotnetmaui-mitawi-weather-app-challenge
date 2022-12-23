@@ -5,7 +5,7 @@ using Mitawi.Services;
 
 namespace Mitawi.ViewModels
 {
-    public partial class HomeDetailViewModel : MyBaseViewModel
+    public partial class HomeDetailViewModel : BaseViewModel
     {
         private readonly INavigationService _navigationService;
 

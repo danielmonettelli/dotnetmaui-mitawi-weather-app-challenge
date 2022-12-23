@@ -5,7 +5,7 @@ using Mitawi.Services;
 
 namespace Mitawi.ViewModels
 {
-    public partial class HomeViewModel : MyBaseViewModel
+    public partial class HomeViewModel : BaseViewModel
     {
         private readonly IWeatherDataService _weatherDataService;
         private readonly INavigationService _navigationService;
@@ -30,14 +30,23 @@ namespace Mitawi.ViewModels
             OnGetWeatherData();
         }
 
-        private async void OnGetWeatherData()
+        private void OnGetWeatherData()
         {
-            MyPlacemark = await _weatherDataService.GetPlacemarkAsync(false);
-            Days = await _weatherDataService.GetDaysAsync(false);
-            Hourlies = await _weatherDataService.GetHourliesAsync(false);
+            Application.Current.Dispatcher.Dispatch(async () =>
+            {
+                GetSkeletonList();
 
-            // Get current time schedule
-            MyHourly = Hourlies.ElementAt(0);
+                IsBusy = true;
+
+                MyPlacemark = await _weatherDataService.GetPlacemarkAsync(false);
+                Days = await _weatherDataService.GetDaysAsync(false);
+                Hourlies = await _weatherDataService.GetHourliesAsync(false);
+
+                // Get current time schedule
+                MyHourly = Hourlies.ElementAt(0);
+
+                IsBusy = false;
+            });
         }
 
         [RelayCommand]
@@ -45,8 +54,31 @@ namespace Mitawi.ViewModels
         {
             if (hourly is not null)
             {
+                IsBusy = true;
+
+                Task.Delay(1000).ContinueWith((t) =>
+                {
+                    IsBusy = false;
+                });
+
                 MyHourly = hourly;
             }
+        }
+
+        [RelayCommand]
+        private void FullUpdate(Hourly hourly)
+        {
+            Application.Current.Dispatcher.Dispatch(async () =>
+            {
+                GetSkeletonList();
+
+                IsBusy = true;
+
+                Hourlies = await _weatherDataService.GetHourliesAsync(false);
+                Days = await _weatherDataService.GetDaysAsync(false);
+
+                IsBusy = false;
+            });
         }
 
         [RelayCommand]
@@ -54,6 +86,27 @@ namespace Mitawi.ViewModels
         {
             await Task.Delay(150).ConfigureAwait(true);
             _navigationService.NavigateTo("HomeDetailPage", Days);
+        }
+
+        private List<Hourly> GetSkeletonList()
+        {
+            Hourlies = new List<Hourly>()
+            {
+                new Hourly {IsBusy=true},
+                new Hourly {IsBusy=true},
+                new Hourly {IsBusy=true},
+                new Hourly {IsBusy=true},
+                new Hourly {IsBusy=true},
+                new Hourly {IsBusy=true},
+                new Hourly {IsBusy=true},
+                new Hourly {IsBusy=true},
+                new Hourly {IsBusy=true},
+                new Hourly {IsBusy=true},
+                new Hourly {IsBusy=true},
+                new Hourly {IsBusy=true}
+            };
+
+            return Hourlies;
         }
 
     }

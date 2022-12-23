@@ -40,6 +40,8 @@ namespace Mitawi.Models
 
     public class Hourly
     {
+        public bool IsBusy { get; set; }
+
         [JsonPropertyName("dt")]
         public long Dt { get; set; }
 

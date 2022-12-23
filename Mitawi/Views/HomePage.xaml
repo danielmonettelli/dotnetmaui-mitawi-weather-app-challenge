@@ -6,6 +6,7 @@
     xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
     xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:models="clr-namespace:Mitawi.Models"
+    xmlns:sk="clr-namespace:Maui.Skeleton;assembly=Maui.Skeleton"
     xmlns:viewmodels="clr-namespace:Mitawi.ViewModels"
     x:Name="parentPage"
     ios:Page.UseSafeArea="true"
@@ -26,6 +27,8 @@
             <!--#region Top layer lower 1-->
             <Border
                 x:Name="topLayerLower1"
+                sk:Skeleton.Hide="True"
+                sk:Skeleton.IsBusy="{Binding IsBusy}"
                 BackgroundColor="{StaticResource col_thirt}"
                 Style="{StaticResource vsm_orientation_topLayerLower1}">
                 <Border.Shadow>
@@ -44,6 +47,10 @@
             <!--#region Top layer higher 2-->
             <Border
                 x:Name="topLayerHigher2"
+                sk:Skeleton.Animation="{sk:DefaultAnimation Source=Fade,
+                                                            Interval='600',
+                                                            Parameter='0.3'}"
+                sk:Skeleton.IsBusy="{Binding IsBusy}"
                 Stroke="{StaticResource col_twel}"
                 StrokeThickness="3"
                 Style="{StaticResource vsm_orientation_topLayerHigher2}">
@@ -60,6 +67,8 @@
                 <Grid
                     x:Name="gridAdminTopLayerHigher2"
                     Padding="16,0"
+                    sk:Skeleton.IsBusy="{Binding IsBusy}"
+                    sk:Skeleton.IsParent="True"
                     Style="{StaticResource vsm_orientation_gridAdminTopLayerHigher2}">
 
                     <!--#region Top icons-->
@@ -83,6 +92,7 @@
                     <StackLayout
                         x:Name="iconAndTextLocation"
                         HorizontalOptions="CenterAndExpand"
+                        MinimumWidthRequest="100"
                         Orientation="Horizontal"
                         Spacing="6"
                         Style="{StaticResource vsm_orientation_iconAndTextLocation}"
@@ -128,22 +138,20 @@
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="15,15,15,15" />
                         </Border.StrokeShape>
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding FullUpdateCommand}" />
+                        </Border.GestureRecognizers>
                         <StackLayout
                             HorizontalOptions="CenterAndExpand"
                             Orientation="Horizontal"
                             Spacing="5">
 
-                            <Path
+                            <Ellipse
                                 Fill="#FFF10C"
-                                VerticalOptions="Center">
-                                <Path.Data>
-                                    <EllipseGeometry
-                                        RadiusX="{OnIdiom Phone=3,
-                                                          Tablet=5}"
-                                        RadiusY="{OnIdiom Phone=3,
-                                                          Tablet=5}" />
-                                </Path.Data>
-                            </Path>
+                                HeightRequest="{OnIdiom Phone=6,
+                                                        Tablet=12}"
+                                WidthRequest="{OnIdiom Phone=6,
+                                                       Tablet=12}" />
 
                             <Label
                                 Style="{OnIdiom Phone={StaticResource TxtCaption_1},
@@ -158,12 +166,16 @@
                     <Image
                         Grid.Row="3"
                         Grid.Column="1"
+                        sk:Skeleton.Hide="True"
+                        sk:Skeleton.IsBusy="{Binding IsBusy}"
                         Source="{Binding MyHourly.Weather[0].Icon, Converter={StaticResource CustomImageUrlScalingConverter}, ConverterParameter=10}" />
                     <!--#endregion-->
 
                     <!--#region Basic description of the climate-->
                     <StackLayout
                         x:Name="lookTemperature"
+                        sk:Skeleton.Hide="True"
+                        sk:Skeleton.IsBusy="{Binding IsBusy}"
                         Style="{StaticResource vsm_orientation_lookTemperature}"
                         VerticalOptions="CenterAndExpand">
                         <Label
@@ -176,6 +188,8 @@
 
                     <StackLayout
                         x:Name="lookWeatherAndDt"
+                        sk:Skeleton.Hide="True"
+                        sk:Skeleton.IsBusy="{Binding IsBusy}"
                         Style="{StaticResource vsm_orientation_lookWeatherAndDt}">
 
                         <Label
@@ -215,6 +229,7 @@
 
                             <Label
                                 Margin="0,8,0,0"
+                                sk:Skeleton.IsBusy="{Binding IsBusy}"
                                 HorizontalTextAlignment="Center"
                                 Style="{OnIdiom Phone={StaticResource TxtSubtitle2_2},
                                                 Tablet={StaticResource TxtHeadline6_2}}"
@@ -237,6 +252,7 @@
 
                             <Label
                                 Margin="0,8,0,0"
+                                sk:Skeleton.IsBusy="{Binding IsBusy}"
                                 HorizontalTextAlignment="Center"
                                 Style="{OnIdiom Phone={StaticResource TxtSubtitle2_2},
                                                 Tablet={StaticResource TxtHeadline6_2}}"
@@ -259,6 +275,7 @@
 
                             <Label
                                 Margin="0,8,0,0"
+                                sk:Skeleton.IsBusy="{Binding IsBusy}"
                                 HorizontalTextAlignment="Center"
                                 Style="{OnIdiom Phone={StaticResource TxtSubtitle2_2},
                                                 Tablet={StaticResource TxtHeadline6_2}}"
@@ -320,6 +337,8 @@
                 <mct:UniformItemsLayout
                     x:Name="uniformForecast24Hours"
                     Margin="-5,0"
+                    sk:Skeleton.IsBusy="{Binding IsBusy}"
+                    sk:Skeleton.IsParent="True"
                     BindableLayout.ItemsSource="{Binding Hourlies}"
                     Style="{StaticResource vsm_orientation_uniformForecast24Hours}">
                     <BindableLayout.ItemTemplate>
@@ -328,6 +347,11 @@
                                 Margin="{OnIdiom Phone='8,2,8,0',
                                                  Tablet='12,4,12,0'}"
                                 Padding="0,10"
+                                sk:Skeleton.Animation="{sk:DefaultAnimation Source=Fade,
+                                                                            Interval='600',
+                                                                            Parameter='0.3'}"
+                                sk:Skeleton.BackgroundColor="{StaticResource col_sec}"
+                                sk:Skeleton.IsBusy="{Binding IsBusy}"
                                 Style="{StaticResource vsm_surfaceHourly}">
                                 <Border.GestureRecognizers>
                                     <TapGestureRecognizer
@@ -340,6 +364,7 @@
                                     <!--#region Temperature in degrees celsius-->
                                     <Label
                                         x:Name="labelTemperature"
+                                        sk:Skeleton.IsBusy="{Binding IsBusy}"
                                         HorizontalTextAlignment="Center"
                                         Style="{StaticResource vsm_labelTemperature}"
                                         Text="{Binding Temp, StringFormat='{0}°', Converter={StaticResource DoubleToIntConverter}}" />
@@ -348,6 +373,8 @@
                                     <!--#region Small weather icon-->
                                     <Image
                                         x:Name="imageSmallWeather"
+                                        sk:Skeleton.Hide="True"
+                                        sk:Skeleton.IsBusy="{Binding IsBusy}"
                                         Source="{Binding Weather[0].Icon, Converter={StaticResource CustomImageUrlScalingConverter}, ConverterParameter=2}"
                                         Style="{StaticResource vsm_imageSmallWeather}" />
                                     <!--#endregion-->
@@ -355,6 +382,7 @@
                                     <!--#region Time per hour-->
                                     <Label
                                         x:Name="labelHour"
+                                        sk:Skeleton.IsBusy="{Binding IsBusy}"
                                         HorizontalTextAlignment="Center"
                                         Style="{StaticResource vsm_labelHour}"
                                         Text="{Binding Dt, Converter={StaticResource UnixTimeToDateTimeConverter}, ConverterParameter=HH:mm}"
