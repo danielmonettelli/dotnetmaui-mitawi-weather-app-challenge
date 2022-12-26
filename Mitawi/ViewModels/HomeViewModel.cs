@@ -32,21 +32,13 @@ namespace Mitawi.ViewModels
 
         private void OnGetWeatherData()
         {
-            Application.Current.Dispatcher.Dispatch(async () =>
-            {
-                GetSkeletonList();
+            WeatherDataFlow();
+        }
 
-                IsBusy = true;
-
-                MyPlacemark = await _weatherDataService.GetPlacemarkAsync(false);
-                Days = await _weatherDataService.GetDaysAsync(false);
-                Hourlies = await _weatherDataService.GetHourliesAsync(false);
-
-                // Get current time schedule
-                MyHourly = Hourlies.ElementAt(0);
-
-                IsBusy = false;
-            });
+        [RelayCommand]
+        private void FullUpdate()
+        {
+            WeatherDataFlow();
         }
 
         [RelayCommand]
@@ -66,7 +58,13 @@ namespace Mitawi.ViewModels
         }
 
         [RelayCommand]
-        private void FullUpdate(Hourly hourly)
+        private async Task DailyForecast7Days()
+        {
+            await Task.Delay(150).ConfigureAwait(true);
+            _navigationService.NavigateTo("HomeDetailPage", Days);
+        }
+
+        private void WeatherDataFlow()
         {
             Application.Current.Dispatcher.Dispatch(async () =>
             {
@@ -74,18 +72,21 @@ namespace Mitawi.ViewModels
 
                 IsBusy = true;
 
-                Hourlies = await _weatherDataService.GetHourliesAsync(false);
-                Days = await _weatherDataService.GetDaysAsync(false);
+                var placemarkTask = _weatherDataService.GetPlacemarkAsync(false);
+                var daysTask = _weatherDataService.GetDaysAsync(false);
+                var hourliesTask = _weatherDataService.GetHourliesAsync(false);
+
+                await Task.WhenAll(placemarkTask, daysTask, hourliesTask);
+
+                MyPlacemark = await placemarkTask;
+                Days = await daysTask;
+                Hourlies = await hourliesTask;
+
+                // Get current time schedule
+                MyHourly = Hourlies.ElementAt(0);
 
                 IsBusy = false;
             });
-        }
-
-        [RelayCommand]
-        private async Task DailyForecast7Days()
-        {
-            await Task.Delay(150).ConfigureAwait(true);
-            _navigationService.NavigateTo("HomeDetailPage", Days);
         }
 
         private List<Hourly> GetSkeletonList()
