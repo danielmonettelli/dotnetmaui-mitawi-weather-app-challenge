@@ -38,6 +38,10 @@ jobs:
         run: |
           dotnet workload install maui
 
+      - name: Add NuGet Package Source
+        run: |
+          dotnet nuget add source --username danielmonettelli --password ${{ secrets.MY_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/danielmonettelli/index.json"
+
       - name: Restore NuGet
         run: |
           dotnet restore ./Mitawi
@@ -60,6 +64,10 @@ jobs:
       - name: Install .NET MAUI Workload
         run: |
           dotnet workload install maui
+
+      - name: Add NuGet Package Source
+        run: |
+          dotnet nuget add source --username danielmonettelli --password ${{ secrets.MY_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/danielmonettelli/index.json"
 
       - name: Restore NuGet
         run: |
@@ -88,6 +96,10 @@ jobs:
       - name: Install .NET MAUI Workload
         run: |
           dotnet workload install maui
+
+      - name: Add NuGet Package Source
+        run: |
+          dotnet nuget add source --username danielmonettelli --password ${{ secrets.MY_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/danielmonettelli/index.json"
 
       - name: Restore NuGet
         run: |
@@ -122,6 +134,10 @@ jobs:
         run: |
           dotnet workload install maui
 
+      - name: Add NuGet Package Source
+        run: |
+          dotnet nuget add source --username danielmonettelli --password ${{ secrets.MY_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/danielmonettelli/index.json"
+          
       - name: Restore NuGet
         run: |
           dotnet restore ./Mitawi
