@@ -13,13 +13,13 @@
                 <VisualStateGroup x:Name="CommonStates">
                     <VisualState x:Name="Normal">
                         <VisualState.Setters>
-                            <Setter Property="HeightRequest" Value="{OnIdiom Phone=42, Tablet=42}" />
+                            <Setter Property="HeightRequest" Value="{OnIdiom Phone=50, Tablet=50}" />
                         </VisualState.Setters>
                     </VisualState>
 
                     <VisualState x:Name="Selected">
                         <VisualState.Setters>
-                            <Setter Property="HeightRequest" Value="{OnIdiom Phone=50, Tablet=50}" />
+                            <Setter Property="HeightRequest" Value="{OnIdiom Phone=56, Tablet=56}" />
                         </VisualState.Setters>
                     </VisualState>
                 </VisualStateGroup>
@@ -92,10 +92,10 @@
                         <VisualState.Setters>
                             <Setter Property="Stroke" Value="{StaticResource col_oct}" />
                             <Setter Property="StrokeThickness" Value="3" />
-                            <Setter Property="HeightRequest" Value="{OnIdiom Phone=120, Tablet=120}" />
-                            <Setter Property="WidthRequest" Value="{OnIdiom Phone=80, Tablet=80}" />
+                            <Setter Property="HeightRequest" Value="{OnIdiom Phone=125, Tablet=125}" />
+                            <Setter Property="WidthRequest" Value="{OnIdiom Phone=95, Tablet=95}" />
                             <Setter Property="BackgroundColor" Value="Transparent" />
-                            <Setter Property="StrokeShape" Value="{RoundRectangle CornerRadius={OnIdiom Phone='30,30,30,30', Tablet='30,30,30,30'}}" />
+                            <Setter Property="StrokeShape" Value="{RoundRectangle CornerRadius={OnIdiom Phone='33,33,33,33', Tablet='33,33,33,33'}}" />
                         </VisualState.Setters>
                     </VisualState>
 
@@ -109,10 +109,10 @@
                                     <GradientStop Offset="0.5" Color="{StaticResource col_qui}" />
                                 </LinearGradientBrush>
                             </Setter>
-                            <Setter Property="HeightRequest" Value="{OnIdiom Phone=126, Tablet=126}" />
-                            <Setter Property="WidthRequest" Value="{OnIdiom Phone=95, Tablet=95}" />
+                            <Setter Property="HeightRequest" Value="{OnIdiom Phone=145, Tablet=145}" />
+                            <Setter Property="WidthRequest" Value="{OnIdiom Phone=105, Tablet=105}" />
                             <Setter Property="BackgroundColor" Value="{StaticResource col_qui}" />
-                            <Setter Property="StrokeShape" Value="{RoundRectangle CornerRadius={OnIdiom Phone='35,35,35,35', Tablet='35,35,35,35'}}" />
+                            <Setter Property="StrokeShape" Value="{RoundRectangle CornerRadius={OnIdiom Phone='36,36,36,36', Tablet='36,36,36,36'}}" />
                         </VisualState.Setters>
                     </VisualState>
                 </VisualStateGroup>

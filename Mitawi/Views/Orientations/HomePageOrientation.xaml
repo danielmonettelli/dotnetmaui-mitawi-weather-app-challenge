@@ -3,7 +3,6 @@
     x:Class="Mitawi.Views.HomePageOrientation"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:markups="clr-namespace:OnScreenSizeMarkup.Maui;assembly=OnScreenSizeMarkup.Maui"
     xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
 
     <Style
@@ -14,7 +13,7 @@
                 <VisualStateGroup x:Name="OrientationStates">
                     <VisualState x:Name="Portrait">
                         <VisualState.Setters>
-                            <Setter Property="Padding" Value="16,0,16,8" />
+                            <Setter Property="Padding" Value="16,0,16,16" />
                             <Setter Property="RowDefinitions">
                                 <Setter.Value>
                                     <RowDefinitionCollection>
@@ -27,7 +26,7 @@
                                         <!--  3  -->
                                         <RowDefinition Height="6" />
                                         <!--  4  -->
-                                        <RowDefinition Height="{OnIdiom Phone=130, Tablet=130}" />
+                                        <RowDefinition Height="{OnIdiom Phone=136, Tablet=145}" />
                                     </RowDefinitionCollection>
                                 </Setter.Value>
                             </Setter>
@@ -342,7 +341,7 @@
                 <VisualStateGroup x:Name="OrientationStates">
                     <VisualState x:Name="Portrait">
                         <VisualState.Setters>
-                            <Setter Property="Orientation" Value="Horizontal" />
+                            <Setter Property="Orientation" Value="Both" />
                             <Setter Property="Grid.Row" Value="4" />
                             <Setter Property="Margin" Value="-16,0,-16,-8" />
                         </VisualState.Setters>
@@ -350,41 +349,9 @@
 
                     <VisualState x:Name="Landscape">
                         <VisualState.Setters>
-                            <Setter Property="Orientation" Value="Vertical" />
+                            <Setter Property="Orientation" Value="Both" />
                             <Setter Property="Grid.Column" Value="1" />
                             <Setter Property="Margin" Value="0,54,0,0" />
-                        </VisualState.Setters>
-                    </VisualState>
-                </VisualStateGroup>
-            </VisualStateGroupList>
-        </Setter>
-    </Style>
-
-    <Style
-        x:Key="vsm_orientation_uniformForecast24Hours"
-        TargetType="mct:UniformItemsLayout">
-        <Setter Property="VisualStateManager.VisualStateGroups">
-            <VisualStateGroupList>
-                <VisualStateGroup x:Name="OrientationStates">
-                    <VisualState x:Name="Portrait">
-                        <VisualState.Setters>
-                            <Setter Property="MaxRows" Value="1" />
-                        </VisualState.Setters>
-                    </VisualState>
-
-                    <VisualState x:Name="Landscape">
-                        <VisualState.Setters>
-                            <Setter Property="MaxColumns">
-                                <Setter.Value>
-                                    <markups:OnScreenSize
-                                        Default="3"
-                                        ExtraLarge="5"
-                                        ExtraSmall="1"
-                                        Large="3"
-                                        Medium="2"
-                                        Small="1" />
-                                </Setter.Value>
-                            </Setter>
                         </VisualState.Setters>
                     </VisualState>
                 </VisualStateGroup>

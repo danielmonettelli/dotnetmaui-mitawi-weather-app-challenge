@@ -5,6 +5,9 @@ namespace Mitawi.Converters
 {
     public class UnixTimeToDateTimeConverter : BaseConverter<object, object, object>
     {
+        public override object DefaultConvertReturnValue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public override object DefaultConvertBackReturnValue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public override object ConvertFrom(object value, object parameter, CultureInfo culture)
         {
             DateTimeOffset dateTimeOffSet = DateTimeOffset.FromUnixTimeSeconds((long)value).ToLocalTime();

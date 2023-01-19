@@ -5,6 +5,9 @@ namespace Mitawi.Converters
 {
     public class NegativeAndPositiveNumberConverter : BaseConverter<object, object>
     {
+        public override object DefaultConvertReturnValue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public override object DefaultConvertBackReturnValue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public override object ConvertFrom(object value, CultureInfo culture)
         {
             int number = (int)value;

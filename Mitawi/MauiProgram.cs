@@ -1,4 +1,7 @@
-﻿using CommunityToolkit.Maui;
+using CommunityToolkit.Maui;
+using Mitawi.Services;
+using Mitawi.ViewModels;
+using Mitawi.Views;
 
 namespace Mitawi;
 public static class MauiProgram
@@ -21,7 +24,28 @@ public static class MauiProgram
             fonts.AddFont("customfonticons.ttf", "CustomFontIcons");
         }).UseMauiCommunityToolkit();
 
+        //RegisterAllServices
+        RegisterServices(builder.Services);
 
         return builder.Build();
     }
+
+    private static void RegisterServices(IServiceCollection services)
+    {
+        //Register Services
+        services.AddSingleton<INavigationService, NavigationService>();
+        services.AddSingleton<IWeatherDataService, WeatherDataService>();
+
+        //Register ViewModels
+        services.AddSingleton<HomeViewModel>();
+        services.AddTransient<HomeDetailViewModel>();
+
+        //Register Views
+        services.AddSingleton<HomePageOrientation>();
+        services.AddSingleton<HomePage>();
+
+        services.AddTransient<HomeDetailPageOrientation>();
+        services.AddTransient<HomeDetailPage>();
+    }
+
 }

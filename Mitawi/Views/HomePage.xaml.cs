@@ -1,5 +1,4 @@
-﻿using CommunityToolkit.Maui.Layouts;
-using Mitawi.Utility;
+﻿using Mitawi.Utility;
 
 namespace Mitawi.Views
 {
@@ -63,13 +62,13 @@ namespace Mitawi.Views
             VisualStateManager.GoToState(gridComplexDescriptionClimate, visualStateOrientation);
             VisualStateManager.GoToState(stackTodayAnd7Days, visualStateOrientation);
             VisualStateManager.GoToState(scrollForecast24Hours, visualStateOrientation);
-            VisualStateManager.GoToState(uniformForecast24Hours, visualStateOrientation);
+            VisualStateManager.GoToState(flexLayoutForecast24Hours, visualStateOrientation);
         }
 
         private void SelectedWeather_Tapped(object sender, EventArgs e)
         {
             VisualElement surfaceWeather = sender as VisualElement;
-            UniformItemsLayout parent = surfaceWeather.Parent as UniformItemsLayout;
+            FlexLayout parent = surfaceWeather.Parent as FlexLayout;
 
             foreach (View child in parent.Children.Cast<View>())
             {
