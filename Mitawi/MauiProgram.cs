@@ -1,8 +1,3 @@
-using CommunityToolkit.Maui;
-using Mitawi.Services;
-using Mitawi.ViewModels;
-using Mitawi.Views;
-
 namespace Mitawi;
 public static class MauiProgram
 {

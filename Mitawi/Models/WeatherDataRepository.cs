@@ -1,7 +1,4 @@
-﻿using Mitawi.Constants;
-using System.Text.Json;
-
-namespace Mitawi.Models
+﻿namespace Mitawi.Models
 {
     public class WeatherDataRepository : IWeatherDataRepository
     {

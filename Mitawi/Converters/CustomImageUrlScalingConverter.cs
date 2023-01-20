@@ -1,7 +1,4 @@
-﻿using CommunityToolkit.Maui.Converters;
-using System.Globalization;
-
-namespace Mitawi.Converters
+﻿namespace Mitawi.Converters
 {
     public class CustomImageUrlScalingConverter : BaseConverter<object, object, object>
     {

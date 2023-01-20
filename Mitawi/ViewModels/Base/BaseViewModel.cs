@@ -1,6 +1,4 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-
-namespace Mitawi.ViewModels
+﻿namespace Mitawi.ViewModels
 {
     public partial class BaseViewModel : ObservableObject
     {

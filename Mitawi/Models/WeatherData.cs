@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace Mitawi.Models
+﻿namespace Mitawi.Models
 {
     public class WeatherData
     {

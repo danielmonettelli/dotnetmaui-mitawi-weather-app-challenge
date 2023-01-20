@@ -1,6 +1,4 @@
-﻿using Mitawi.Utility;
-
-namespace Mitawi.Views
+﻿namespace Mitawi.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomePage : ContentPage

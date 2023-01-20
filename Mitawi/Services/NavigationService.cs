@@ -1,7 +1,4 @@
-﻿using Mitawi.ViewModels;
-using System.Runtime.CompilerServices;
-
-namespace Mitawi.Services
+﻿namespace Mitawi.Services
 {
     public class NavigationService : INavigationService
     {

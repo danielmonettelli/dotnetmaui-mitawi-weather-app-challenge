@@ -1,9 +1,4 @@
-﻿using Mitawi.Models;
-using Mitawi.Services;
-using Mitawi.Utility;
-using Mitawi.Views;
-
-namespace Mitawi;
+﻿namespace Mitawi;
 
 public partial class App : Application
 {

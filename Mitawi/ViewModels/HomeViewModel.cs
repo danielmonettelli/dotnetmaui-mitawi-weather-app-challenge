@@ -1,8 +1,3 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
-using Mitawi.Models;
-using Mitawi.Services;
-
 namespace Mitawi.ViewModels
 {
     public partial class HomeViewModel : BaseViewModel

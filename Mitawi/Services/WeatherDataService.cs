@@ -1,6 +1,4 @@
-﻿using Mitawi.Models;
-
-namespace Mitawi.Services
+﻿namespace Mitawi.Services
 {
     public class WeatherDataService : IWeatherDataService
     {
