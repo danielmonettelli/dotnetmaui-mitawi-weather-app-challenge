@@ -52,7 +52,7 @@
 	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Maui" Version="3.1.0" />
 	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
-	  <PackageReference Include="Maui.Skeleton" Version="2.0.0" />
+	  <PackageReference Include="HorusStudio.Maui.Skeleton" Version="2.0.0" />
 	  <PackageReference Include="Sentry.Maui" Version="3.26.1" />
 	</ItemGroup>
 
