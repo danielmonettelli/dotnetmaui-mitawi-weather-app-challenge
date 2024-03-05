@@ -1,16 +1,12 @@
-namespace Mitawi;
+﻿namespace Mitawi;
+
 public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
     {
         var builder = MauiApp.CreateBuilder();
         builder.UseMauiApp<App>()
-        .UseSentry(options =>
-        {
-            options.Dsn = "INSERT_DSN_SENTRY_HERE";
-            options.Debug = true;
-            options.TracesSampleRate = 1.0;
-        })
+        .UseFFImageLoading()
         .ConfigureFonts(fonts =>
         {
             fonts.AddFont("Roboto-Bold.ttf", "Roboto#700");
@@ -22,25 +18,29 @@ public static class MauiProgram
         //RegisterAllServices
         RegisterServices(builder.Services);
 
+#if DEBUG
+        builder.Logging.AddDebug();
+#endif
+
         return builder.Build();
     }
 
     private static void RegisterServices(IServiceCollection services)
     {
         //Register Services
-        services.AddSingleton<INavigationService, NavigationService>();
         services.AddSingleton<IWeatherDataService, WeatherDataService>();
 
         //Register ViewModels
+        services.AddSingleton<WelcomeViewModel>();
         services.AddSingleton<HomeViewModel>();
         services.AddTransient<HomeDetailViewModel>();
 
         //Register Views
+        services.AddSingleton<WelcomePage>();
         services.AddSingleton<HomePageOrientation>();
         services.AddSingleton<HomePage>();
 
         services.AddTransient<HomeDetailPageOrientation>();
         services.AddTransient<HomeDetailPage>();
     }
-
 }

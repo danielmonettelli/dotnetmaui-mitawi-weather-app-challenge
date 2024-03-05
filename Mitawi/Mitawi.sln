@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.0.31611.283
+VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mitawi", "Mitawi.csproj", "{100F5234-6D95-4D94-8874-6976A929B156}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mitawi", "Mitawi.csproj", "{665B5326-7DB5-4C53-8D2B-A45FAB1099D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,17 +11,17 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{100F5234-6D95-4D94-8874-6976A929B156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{100F5234-6D95-4D94-8874-6976A929B156}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{100F5234-6D95-4D94-8874-6976A929B156}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{100F5234-6D95-4D94-8874-6976A929B156}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{100F5234-6D95-4D94-8874-6976A929B156}.Release|Any CPU.Build.0 = Release|Any CPU
-		{100F5234-6D95-4D94-8874-6976A929B156}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{665B5326-7DB5-4C53-8D2B-A45FAB1099D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{665B5326-7DB5-4C53-8D2B-A45FAB1099D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{665B5326-7DB5-4C53-8D2B-A45FAB1099D2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{665B5326-7DB5-4C53-8D2B-A45FAB1099D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{665B5326-7DB5-4C53-8D2B-A45FAB1099D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{665B5326-7DB5-4C53-8D2B-A45FAB1099D2}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+		SolutionGuid = {9D32F61C-F186-4E2B-8239-5E17930B2F36}
 	EndGlobalSection
 EndGlobal

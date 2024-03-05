@@ -3,6 +3,7 @@
     x:Class="Mitawi.Views.HomePage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffImageLoading="clr-namespace:FFImageLoading.Maui;assembly=FFImageLoading.Compat.Maui"
     xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
     xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:models="clr-namespace:Mitawi.Models"
@@ -12,7 +13,7 @@
     ios:Page.UseSafeArea="true"
     x:DataType="viewmodels:HomeViewModel"
     BackgroundColor="{StaticResource col_fourt}"
-    NavigationPage.HasNavigationBar="False">
+    Shell.NavBarIsVisible="False">
 
     <ContentPage.Resources>
         <ResourceDictionary Source="Orientations/HomePageOrientation.xaml" />
@@ -30,6 +31,7 @@
                 sk:Skeleton.Hide="True"
                 sk:Skeleton.IsBusy="{Binding IsBusy}"
                 BackgroundColor="{StaticResource col_thirt}"
+                StrokeThickness="0"
                 Style="{StaticResource vsm_orientation_topLayerLower1}">
                 <Border.Shadow>
                     <Shadow
@@ -75,7 +77,8 @@
                     <Border
                         Grid.Row="0"
                         Grid.Column="0"
-                        BackgroundColor="Transparent">
+                        BackgroundColor="Transparent"
+                        StrokeThickness="0">
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="8,8,8,8" />
                         </Border.StrokeShape>
@@ -98,7 +101,13 @@
                         Style="{StaticResource vsm_orientation_iconAndTextLocation}"
                         VerticalOptions="CenterAndExpand">
 
-                        <Image Source="{OnIdiom Phone={StaticResource icon_location_solid_phone}, Tablet={StaticResource icon_location_solid_tablet}}" />
+                        <Image
+                            HeightRequest="{OnIdiom Tablet=25,
+                                                    Phone=18}"
+                            Source="{OnIdiom Phone={StaticResource icon_location_solid_phone},
+                                             Tablet={StaticResource icon_location_solid_tablet}}"
+                            WidthRequest="{OnIdiom Tablet=25,
+                                                   Phone=18}" />
 
                         <Label
                             Style="{OnIdiom Phone={StaticResource TxtHeadline5_1},
@@ -110,15 +119,18 @@
                     <Border
                         x:Name="iconPicker"
                         BackgroundColor="Transparent"
+                        StrokeThickness="0"
                         Style="{StaticResource vsm_orientation_iconPicker}">
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="8,8,8,8" />
                         </Border.StrokeShape>
 
                         <Image
+                            HeightRequest="24"
                             HorizontalOptions="Center"
                             Source="{StaticResource icon_picker_solid}"
-                            VerticalOptions="CenterAndExpand" />
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="24" />
                     </Border>
                     <!--#endregion-->
 
@@ -163,7 +175,7 @@
                     <!--#endregion-->
 
                     <!--#region Image-->
-                    <Image
+                    <ffImageLoading:CachedImage
                         Grid.Row="3"
                         Grid.Column="1"
                         sk:Skeleton.Hide="True"
@@ -225,7 +237,10 @@
 
                         <StackLayout Grid.Column="0">
 
-                            <Image Source="{StaticResource icon_wind_outline}" />
+                            <Image
+                                HeightRequest="22"
+                                Source="{StaticResource icon_wind_outline}"
+                                WidthRequest="40" />
 
                             <Label
                                 Margin="0,8,0,0"
@@ -270,7 +285,7 @@
 
                             <Image
                                 HeightRequest="22"
-                                Source="svg_chance_of_rain_mix.svg"
+                                Source="svg_chance_of_rain_mix.png"
                                 WidthRequest="40" />
 
                             <Label
@@ -322,8 +337,10 @@
                         VerticalTextAlignment="Center" />
 
                     <Image
+                        HeightRequest="12"
                         Source="{StaticResource icon_arrow_forward_outline}"
-                        TranslationY="1" />
+                        TranslationY="1"
+                        WidthRequest="12" />
                 </StackLayout>
             </StackLayout>
             <!--#endregion-->
@@ -332,24 +349,20 @@
             <ScrollView
                 x:Name="scrollForecast24Hours"
                 Padding="16,0"
+                Orientation="Horizontal"
                 Style="{StaticResource vsm_orientation_scrollForecast24Hours}">
 
-                <FlexLayout
-                    x:Name="flexLayoutForecast24Hours"
-                    Margin="{OnIdiom Phone='-12,0,-8,0',
-                                     Tablet='-16,0,-12,0'}"
+                <mct:UniformItemsLayout
+                    x:Name="uniformItemsLayoutForecast24Hours"
                     sk:Skeleton.IsBusy="{Binding IsBusy}"
                     sk:Skeleton.IsParent="True"
-                    AlignItems="Center"
                     BindableLayout.ItemsSource="{Binding Hourlies}"
-                    Direction="Column"
-                    JustifyContent="Center"
-                    Wrap="Wrap">
+                    Style="{StaticResource vsm_orientation_uniformForecast24Hours}">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate x:DataType="models:Hourly">
                             <Border
-                                Margin="{OnIdiom Phone='4,2,4,0',
-                                                 Tablet='8,4,8,0'}"
+                                Margin="{OnIdiom Phone='8,2,8,0',
+                                                 Tablet='12,4,12,0'}"
                                 Padding="0,10"
                                 sk:Skeleton.Animation="{sk:DefaultAnimation Source=Fade,
                                                                             Interval='600',
@@ -375,7 +388,7 @@
                                     <!--#endregion-->
 
                                     <!--#region Small weather icon-->
-                                    <Image
+                                    <ffImageLoading:CachedImage
                                         x:Name="imageSmallWeather"
                                         sk:Skeleton.Hide="True"
                                         sk:Skeleton.IsBusy="{Binding IsBusy}"
@@ -396,9 +409,33 @@
                             </Border>
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
-                </FlexLayout>
+                </mct:UniformItemsLayout>
             </ScrollView>
             <!--#endregion-->
+
+            <!--<Grid
+                x:Name="gridLoading"
+                BackgroundColor="#fd3333"
+                IsVisible="{Binding IsBusy}"
+                RowDefinitions="*, Auto, Auto, *"
+                Style="{StaticResource vsm_orientation_gridLoading}">
+                <skia:SKLottieView
+                    Grid.Row="1"
+                    HeightRequest="200"
+                    IsAnimationEnabled="{Binding IsAnimation}"
+                    IsVisible="{Binding IsAnimation}"
+                    Progress="{Binding Progress}"
+                    Source="weather_animation.json"
+                    WidthRequest="200" />
+
+                <Label
+                    Grid.Row="2"
+                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource TxtSubtitle1_1}"
+                    Text="Loading"
+                    TextColor="{AppThemeBinding Light='#703edb',
+                                                Dark='#9F79F1'}" />
+            </Grid>-->
         </Grid>
         <!--#endregion-->
     </ContentPage.Content>

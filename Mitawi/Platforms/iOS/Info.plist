@@ -28,7 +28,7 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>
-  <key>NSLocationWhenInUseUsageDescription</key>
+	  <key>NSLocationWhenInUseUsageDescription</key>
   <string>Fill in a reason why your app needs access to location.</string>
   <key>NSLocationTemporaryUsageDescriptionDictionary</key>
   <array>

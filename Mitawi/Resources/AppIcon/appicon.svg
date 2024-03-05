@@ -1,4 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="456" height="456" viewBox="0 0 456 456" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <rect x="0" y="0" width="456" height="456" fill="#512BD4" />
-</svg>
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 456 456" width="456" height="456"><defs><image  width="456" height="456" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcgAAAHIAQMAAADwb+ipAAAAAXNSR0IB2cksfwAAAANQTFRFD2jzJbY47gAAADBJREFUeJztwTEBAAAAwqD1T20MH6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4G9nUAABGqoTOQAAAABJRU5ErkJggg=="/></defs><style>.a{fill:#512bd4}</style><path class="a" d="m0 0h456v456h-456z"/><use  href="#img1" x="0" y="0"/></svg>

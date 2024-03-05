@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Mitawi.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:view="clr-namespace:Mitawi.Views"
+    Title="Mitawi"
+    Shell.FlyoutBehavior="Disabled">
+
+    <Shell.Behaviors>
+        <mct:StatusBarBehavior
+            StatusBarColor="#11b0fd"
+            StatusBarStyle="Default" />
+    </Shell.Behaviors>
+
+    <ShellContent
+        Title="Welcome"
+        ContentTemplate="{DataTemplate view:WelcomePage}"
+        Route="WelcomePage" />
+
+</Shell>

@@ -1,11 +1,9 @@
-﻿namespace Mitawi.Views
+﻿namespace Mitawi.Views;
+
+public partial class HomeDetailPageOrientation : ResourceDictionary
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomeDetailPageOrientation : ResourceDictionary
+    public HomeDetailPageOrientation()
     {
-        public HomeDetailPageOrientation()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

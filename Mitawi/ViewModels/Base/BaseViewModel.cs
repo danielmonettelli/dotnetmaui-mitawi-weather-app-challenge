@@ -1,13 +1,7 @@
-﻿namespace Mitawi.ViewModels
+﻿namespace Mitawi.ViewModels;
+
+public partial class BaseViewModel : ObservableObject
 {
-    public partial class BaseViewModel : ObservableObject
-    {
-        public virtual void Initialize(object parameter)
-        {
-
-        }
-
-        [ObservableProperty]
-        private bool isBusy = false;
-    }
+    [ObservableProperty]
+    private bool isBusy = false;
 }
