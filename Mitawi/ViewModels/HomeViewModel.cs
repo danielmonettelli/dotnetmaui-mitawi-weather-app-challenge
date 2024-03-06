@@ -5,9 +5,6 @@ public partial class HomeViewModel : BaseViewModel
     private readonly IWeatherDataService _weatherDataService;
 
     [ObservableProperty]
-    private bool isAnimation;
-
-    [ObservableProperty]
     private List<Hourly> hourlies;
 
     [ObservableProperty]

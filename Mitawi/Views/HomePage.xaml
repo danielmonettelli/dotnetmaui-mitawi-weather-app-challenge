@@ -412,30 +412,6 @@
                 </mct:UniformItemsLayout>
             </ScrollView>
             <!--#endregion-->
-
-            <!--<Grid
-                x:Name="gridLoading"
-                BackgroundColor="#fd3333"
-                IsVisible="{Binding IsBusy}"
-                RowDefinitions="*, Auto, Auto, *"
-                Style="{StaticResource vsm_orientation_gridLoading}">
-                <skia:SKLottieView
-                    Grid.Row="1"
-                    HeightRequest="200"
-                    IsAnimationEnabled="{Binding IsAnimation}"
-                    IsVisible="{Binding IsAnimation}"
-                    Progress="{Binding Progress}"
-                    Source="weather_animation.json"
-                    WidthRequest="200" />
-
-                <Label
-                    Grid.Row="2"
-                    HorizontalTextAlignment="Center"
-                    Style="{StaticResource TxtSubtitle1_1}"
-                    Text="Loading"
-                    TextColor="{AppThemeBinding Light='#703edb',
-                                                Dark='#9F79F1'}" />
-            </Grid>-->
         </Grid>
         <!--#endregion-->
     </ContentPage.Content>
