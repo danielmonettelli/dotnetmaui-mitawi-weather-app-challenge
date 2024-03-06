@@ -3,6 +3,7 @@
     x:Class="Mitawi.Views.HomePageOrientation"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:markups="clr-namespace:OnScreenSizeMarkup.Maui;assembly=OnScreenSizeMarkup.Maui"
     xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
 
     <Style
@@ -374,7 +375,17 @@
 
                     <VisualState x:Name="Landscape">
                         <VisualState.Setters>
-                            <Setter Property="MaxColumns" Value="2" />
+                            <Setter Property="MaxColumns">
+                                <Setter.Value>
+                                    <markups:OnScreenSize
+                                        Default="3"
+                                        ExtraLarge="5"
+                                        ExtraSmall="1"
+                                        Large="3"
+                                        Medium="2"
+                                        Small="1" />
+                                </Setter.Value>
+                            </Setter>
                         </VisualState.Setters>
                     </VisualState>
                 </VisualStateGroup>

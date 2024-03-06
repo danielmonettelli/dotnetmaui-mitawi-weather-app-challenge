@@ -6,13 +6,62 @@
     xmlns:viewModel="clr-namespace:Mitawi.ViewModels"
     x:DataType="viewModel:WelcomeViewModel"
     Shell.NavBarIsVisible="False">
-    <VerticalStackLayout
-        HorizontalOptions="Center"
-        VerticalOptions="Center">
+
+    <Grid RowDefinitions="50, Auto, Auto, *, Auto, Auto, 34, Auto, 50">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop Offset="0" Color="{StaticResource col_prim}" />
+                <GradientStop Offset="0.5" Color="{StaticResource col_sec}" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Label
+            Grid.Row="1"
+            FontFamily="Roboto#500"
+            FontSize="28"
+            HorizontalTextAlignment="Center"
+            Text="Discover The"
+            TextColor="White" />
+
+        <Label
+            Grid.Row="2"
+            FontFamily="Roboto#500"
+            FontSize="28"
+            HorizontalTextAlignment="Center"
+            Text="Weather In Your City"
+            TextColor="White" />
+
+        <Image
+            Grid.Row="3"
+            Margin="20,0"
+            Source="weather.png" />
+
+        <Label
+            Grid.Row="4"
+            FontFamily="Roboto#400"
+            FontSize="16"
+            HorizontalTextAlignment="Center"
+            Text="Get to know your weather maps and"
+            TextColor="White" />
+
+        <Label
+            Grid.Row="5"
+            FontFamily="Roboto#400"
+            FontSize="16"
+            HorizontalTextAlignment="Center"
+            Text="radar precipitation forcast"
+            TextColor="White" />
+
         <Button
+            Grid.Row="7"
+            BackgroundColor="White"
             Command="{Binding NextPageCommand}"
-            HorizontalOptions="Center"
-            Text="Next page"
-            VerticalOptions="Center" />
-    </VerticalStackLayout>
+            CornerRadius="16"
+            FontFamily="Roboto#700"
+            FontSize="18"
+            HeightRequest="50"
+            Text="GET STARTED"
+            TextColor="{StaticResource col_sec}"
+            WidthRequest="255" />
+    </Grid>
 </ContentPage>
