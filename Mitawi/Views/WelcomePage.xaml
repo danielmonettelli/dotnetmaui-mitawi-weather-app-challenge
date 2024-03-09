@@ -16,43 +16,54 @@
         </Grid.Background>
 
         <Label
+            x:Name="lblPhrase1"
             Grid.Row="1"
             FontFamily="Roboto#500"
             FontSize="28"
             HorizontalTextAlignment="Center"
+            IsVisible="False"
             Text="Discover The"
             TextColor="White" />
 
         <Label
+            x:Name="lblPhrase2"
             Grid.Row="2"
             FontFamily="Roboto#500"
             FontSize="28"
             HorizontalTextAlignment="Center"
+            IsVisible="False"
             Text="Weather In Your City"
             TextColor="White" />
 
         <Image
+            x:Name="imgWeather"
             Grid.Row="3"
             Margin="20,0"
+            IsVisible="False"
             Source="weather.png" />
 
         <Label
+            x:Name="lblPhrase3"
             Grid.Row="4"
             FontFamily="Roboto#400"
             FontSize="16"
             HorizontalTextAlignment="Center"
+            IsVisible="False"
             Text="Get to know your weather maps and"
             TextColor="White" />
 
         <Label
+            x:Name="lblPhrase4"
             Grid.Row="5"
             FontFamily="Roboto#400"
             FontSize="16"
             HorizontalTextAlignment="Center"
+            IsVisible="False"
             Text="radar precipitation forcast"
             TextColor="White" />
 
         <Button
+            x:Name="btnGetStarted"
             Grid.Row="7"
             BackgroundColor="White"
             Command="{Binding NextPageCommand}"
@@ -60,6 +71,8 @@
             FontFamily="Roboto#700"
             FontSize="18"
             HeightRequest="50"
+            IsEnabled="False"
+            IsVisible="False"
             Text="GET STARTED"
             TextColor="{StaticResource col_sec}"
             WidthRequest="255" />
