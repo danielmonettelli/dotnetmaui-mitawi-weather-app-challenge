@@ -3,7 +3,9 @@
     x:Class="Mitawi.Views.HomePage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converter="clr-namespace:Mitawi.Converters"
     xmlns:ffImageLoading="clr-namespace:FFImageLoading.Maui;assembly=FFImageLoading.Compat.Maui"
+    xmlns:heyview="clr-namespace:Mitawi.Views"
     xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
     xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:models="clr-namespace:Mitawi.Models"
@@ -17,6 +19,8 @@
 
     <ContentPage.Resources>
         <ResourceDictionary Source="Orientations/HomePageOrientation.xaml" />
+
+        <converter:InvertBooleanConverter x:Key="InvertBooleanConverter" />
     </ContentPage.Resources>
 
     <ContentPage.Content>
@@ -29,7 +33,7 @@
             <Border
                 x:Name="topLayerLower1"
                 sk:Skeleton.Hide="True"
-                sk:Skeleton.IsBusy="{Binding IsBusy}"
+                sk:Skeleton.IsBusy="{Binding IsAnimationSkeleton}"
                 BackgroundColor="{StaticResource col_thirt}"
                 StrokeThickness="0"
                 Style="{StaticResource vsm_orientation_topLayerLower1}">
@@ -52,7 +56,7 @@
                 sk:Skeleton.Animation="{sk:DefaultAnimation Source=Fade,
                                                             Interval='600',
                                                             Parameter='0.3'}"
-                sk:Skeleton.IsBusy="{Binding IsBusy}"
+                sk:Skeleton.IsBusy="{Binding IsAnimationSkeleton}"
                 Stroke="{StaticResource col_twel}"
                 StrokeThickness="3"
                 Style="{StaticResource vsm_orientation_topLayerHigher2}">
@@ -69,7 +73,7 @@
                 <Grid
                     x:Name="gridAdminTopLayerHigher2"
                     Padding="16,0"
-                    sk:Skeleton.IsBusy="{Binding IsBusy}"
+                    sk:Skeleton.IsBusy="{Binding IsAnimationSkeleton}"
                     sk:Skeleton.IsParent="True"
                     Style="{StaticResource vsm_orientation_gridAdminTopLayerHigher2}">
 
@@ -179,7 +183,7 @@
                         Grid.Row="3"
                         Grid.Column="1"
                         sk:Skeleton.Hide="True"
-                        sk:Skeleton.IsBusy="{Binding IsBusy}"
+                        sk:Skeleton.IsBusy="{Binding IsAnimationSkeleton}"
                         Source="{Binding MyHourly.Weather[0].Icon, Converter={StaticResource CustomImageUrlScalingConverter}, ConverterParameter=10}" />
                     <!--#endregion-->
 
@@ -187,7 +191,7 @@
                     <StackLayout
                         x:Name="lookTemperature"
                         sk:Skeleton.Hide="True"
-                        sk:Skeleton.IsBusy="{Binding IsBusy}"
+                        sk:Skeleton.IsBusy="{Binding IsAnimationSkeleton}"
                         Style="{StaticResource vsm_orientation_lookTemperature}"
                         VerticalOptions="CenterAndExpand">
                         <Label
@@ -201,7 +205,7 @@
                     <StackLayout
                         x:Name="lookWeatherAndDt"
                         sk:Skeleton.Hide="True"
-                        sk:Skeleton.IsBusy="{Binding IsBusy}"
+                        sk:Skeleton.IsBusy="{Binding IsAnimationSkeleton}"
                         Style="{StaticResource vsm_orientation_lookWeatherAndDt}">
 
                         <Label
@@ -244,7 +248,7 @@
 
                             <Label
                                 Margin="0,8,0,0"
-                                sk:Skeleton.IsBusy="{Binding IsBusy}"
+                                sk:Skeleton.IsBusy="{Binding IsAnimationSkeleton}"
                                 HorizontalTextAlignment="Center"
                                 Style="{OnIdiom Phone={StaticResource TxtSubtitle2_2},
                                                 Tablet={StaticResource TxtHeadline6_2}}"
@@ -267,7 +271,7 @@
 
                             <Label
                                 Margin="0,8,0,0"
-                                sk:Skeleton.IsBusy="{Binding IsBusy}"
+                                sk:Skeleton.IsBusy="{Binding IsAnimationSkeleton}"
                                 HorizontalTextAlignment="Center"
                                 Style="{OnIdiom Phone={StaticResource TxtSubtitle2_2},
                                                 Tablet={StaticResource TxtHeadline6_2}}"
@@ -290,7 +294,7 @@
 
                             <Label
                                 Margin="0,8,0,0"
-                                sk:Skeleton.IsBusy="{Binding IsBusy}"
+                                sk:Skeleton.IsBusy="{Binding IsAnimationSkeleton}"
                                 HorizontalTextAlignment="Center"
                                 Style="{OnIdiom Phone={StaticResource TxtSubtitle2_2},
                                                 Tablet={StaticResource TxtHeadline6_2}}"
@@ -324,6 +328,7 @@
                 <StackLayout
                     Padding="16,0"
                     HorizontalOptions="EndAndExpand"
+                    IsEnabled="{Binding IsLoading, Converter={StaticResource InvertBooleanConverter}}"
                     Orientation="Horizontal"
                     Spacing="6">
                     <StackLayout.GestureRecognizers>
@@ -354,9 +359,10 @@
 
                 <mct:UniformItemsLayout
                     x:Name="uniformItemsLayoutForecast24Hours"
-                    sk:Skeleton.IsBusy="{Binding IsBusy}"
+                    sk:Skeleton.IsBusy="{Binding IsAnimationSkeleton}"
                     sk:Skeleton.IsParent="True"
                     BindableLayout.ItemsSource="{Binding Hourlies}"
+                    IsEnabled="{Binding IsLoading, Converter={StaticResource InvertBooleanConverter}}"
                     Style="{StaticResource vsm_orientation_uniformForecast24Hours}">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate x:DataType="models:Hourly">
@@ -368,7 +374,7 @@
                                                                             Interval='600',
                                                                             Parameter='0.3'}"
                                 sk:Skeleton.BackgroundColor="{StaticResource col_sec}"
-                                sk:Skeleton.IsBusy="{Binding IsBusy}"
+                                sk:Skeleton.IsBusy="{Binding IsAnimationSkeleton}"
                                 Style="{StaticResource vsm_surfaceHourly}">
                                 <Border.GestureRecognizers>
                                     <TapGestureRecognizer
@@ -381,7 +387,7 @@
                                     <!--#region Temperature in degrees celsius-->
                                     <Label
                                         x:Name="labelTemperature"
-                                        sk:Skeleton.IsBusy="{Binding IsBusy}"
+                                        sk:Skeleton.IsBusy="{Binding IsAnimationSkeleton}"
                                         HorizontalTextAlignment="Center"
                                         Style="{StaticResource vsm_labelTemperature}"
                                         Text="{Binding Temp, StringFormat='{0}°', Converter={StaticResource DoubleToIntConverter}}" />
@@ -391,7 +397,7 @@
                                     <ffImageLoading:CachedImage
                                         x:Name="imageSmallWeather"
                                         sk:Skeleton.Hide="True"
-                                        sk:Skeleton.IsBusy="{Binding IsBusy}"
+                                        sk:Skeleton.IsBusy="{Binding IsAnimationSkeleton}"
                                         Source="{Binding Weather[0].Icon, Converter={StaticResource CustomImageUrlScalingConverter}, ConverterParameter=2}"
                                         Style="{StaticResource vsm_imageSmallWeather}" />
                                     <!--#endregion-->
@@ -399,7 +405,7 @@
                                     <!--#region Time per hour-->
                                     <Label
                                         x:Name="labelHour"
-                                        sk:Skeleton.IsBusy="{Binding IsBusy}"
+                                        sk:Skeleton.IsBusy="{Binding IsAnimationSkeleton}"
                                         HorizontalTextAlignment="Center"
                                         Style="{StaticResource vsm_labelHour}"
                                         Text="{Binding Dt, Converter={StaticResource UnixTimeToDateTimeConverter}, ConverterParameter=HH:mm}"
@@ -412,6 +418,43 @@
                 </mct:UniformItemsLayout>
             </ScrollView>
             <!--#endregion-->
+
+            <BoxView
+                Grid.Row="0"
+                Grid.RowSpan="5"
+                Margin="-16,0,-16,-8"
+                IsEnabled="{Binding IsLoading}"
+                IsVisible="{Binding IsLoading}">
+                <BoxView.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Offset="0" Color="{StaticResource col_prim}" />
+                        <GradientStop Offset="0.5" Color="{StaticResource col_sec}" />
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+
+            <VerticalStackLayout
+                Grid.Row="0"
+                Grid.RowSpan="5"
+                Margin="-16,0,-16,-8"
+                HorizontalOptions="Center"
+                IsEnabled="{Binding IsLoading}"
+                IsVisible="{Binding IsLoading}"
+                Spacing="10"
+                VerticalOptions="Center">
+
+                <ActivityIndicator
+                    HeightRequest="50"
+                    IsRunning="{Binding IsLoading}"
+                    WidthRequest="50"
+                    Color="White" />
+
+                <Label
+                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource TxtSubtitle1_1}"
+                    Text="Loading"
+                    TextColor="White" />
+            </VerticalStackLayout>
         </Grid>
         <!--#endregion-->
     </ContentPage.Content>

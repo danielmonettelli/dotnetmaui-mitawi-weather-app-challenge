@@ -38,7 +38,7 @@ public class Weather
 
 public class Hourly
 {
-    public bool IsBusy { get; set; }
+    public bool IsAnimationSkeleton { get; set; }
 
     [JsonPropertyName("dt")]
     public long Dt { get; set; }

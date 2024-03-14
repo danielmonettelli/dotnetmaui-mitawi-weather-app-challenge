@@ -46,7 +46,7 @@ public partial class WelcomePage : ContentPage
             { 0.3, 0.5, new Animation(v => imgWeather.Scale = v, 0, 1, Easing.SpringOut) },
             { 0.5, 0.7, new Animation(v => lblPhrase3.Opacity = v, 0, 1, Easing.CubicInOut) },
             { 0.6, 0.8, new Animation(v => lblPhrase4.Opacity = v, 0, 1, Easing.CubicInOut) },
-            { 0.8, 1, new Animation(v=>
+            { 0.8, 1, new Animation(v =>
               {
                   btnGetStarted.Opacity = v;
                   btnGetStarted.Scale = v;

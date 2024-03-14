@@ -13,6 +13,11 @@ public partial class HomePage : ContentPage
         BindingContext = vm;
     }
 
+    protected override bool OnBackButtonPressed()
+    {
+        return true;
+    }
+
     private void HomePage_Orientation(object sender, EventArgs e)
     {
         string visualStateOrientation = Height > Width ? "Portrait" : "Landscape";
@@ -33,7 +38,7 @@ public partial class HomePage : ContentPage
         VisualStateManager.GoToState(uniformItemsLayoutForecast24Hours, visualStateOrientation);
     }
 
-    private void SelectedWeather_Tapped(object sender, EventArgs e)
+    private void SelectedWeather_Tapped(object sender, TappedEventArgs e)
     {
         VisualElement surfaceWeather = sender as VisualElement;
         UniformItemsLayout parent = surfaceWeather.Parent as UniformItemsLayout;
@@ -58,5 +63,4 @@ public partial class HomePage : ContentPage
         VisualStateManager.GoToState(imageSmallWeather, visualStateControl);
         VisualStateManager.GoToState(labelHour, visualStateControl);
     }
-
 }

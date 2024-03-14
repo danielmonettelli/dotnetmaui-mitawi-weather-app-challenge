@@ -5,6 +5,12 @@ public partial class HomeViewModel : BaseViewModel
     private readonly IWeatherDataService _weatherDataService;
 
     [ObservableProperty]
+    private bool isAnimationSkeleton;
+
+    [ObservableProperty]
+    private bool isLoading;
+
+    [ObservableProperty]
     private List<Hourly> hourlies;
 
     [ObservableProperty]
@@ -24,9 +30,9 @@ public partial class HomeViewModel : BaseViewModel
     }
 
     [RelayCommand]
-    private void FullUpdate()
+    private async Task FullUpdate()
     {
-        WeatherDataFlow();
+        await WeatherDataFlow();
     }
 
     [RelayCommand]
@@ -34,11 +40,11 @@ public partial class HomeViewModel : BaseViewModel
     {
         if (hourly is not null)
         {
-            IsBusy = true;
+            IsAnimationSkeleton = true;
 
             Task.Delay(1000).ContinueWith((t) =>
             {
-                IsBusy = false;
+                IsAnimationSkeleton = false;
             });
 
             MyHourly = hourly;
@@ -61,7 +67,7 @@ public partial class HomeViewModel : BaseViewModel
 
     private async Task WeatherDataFlow()
     {
-        IsBusy = true;
+        IsLoading = true;
 
         var placemarkTask = _weatherDataService.GetPlacemarkAsync();
         var daysTask = _weatherDataService.GetDaysAsync();
@@ -76,7 +82,7 @@ public partial class HomeViewModel : BaseViewModel
         // Get current time schedule
         MyHourly = Hourlies.ElementAt(0);
 
-        IsBusy = false;
+        IsLoading = false;
     }
 
 }

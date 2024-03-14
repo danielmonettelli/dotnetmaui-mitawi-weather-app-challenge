@@ -37,6 +37,7 @@ public static class MauiProgram
 
         //Register Views
         services.AddSingleton<WelcomePage>();
+
         services.AddSingleton<HomePageOrientation>();
         services.AddSingleton<HomePage>();
 
