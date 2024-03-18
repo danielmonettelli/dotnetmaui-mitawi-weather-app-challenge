@@ -36,6 +36,7 @@ public partial class HomePage : ContentPage
         VisualStateManager.GoToState(stackTodayAnd7Days, visualStateOrientation);
         VisualStateManager.GoToState(scrollForecast24Hours, visualStateOrientation);
         VisualStateManager.GoToState(uniformItemsLayoutForecast24Hours, visualStateOrientation);
+        VisualStateManager.GoToState(borderLoading, visualStateOrientation);
     }
 
     private void SelectedWeather_Tapped(object sender, TappedEventArgs e)

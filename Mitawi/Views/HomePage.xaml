@@ -354,7 +354,6 @@
             <ScrollView
                 x:Name="scrollForecast24Hours"
                 Padding="16,0"
-                Orientation="Horizontal"
                 Style="{StaticResource vsm_orientation_scrollForecast24Hours}">
 
                 <mct:UniformItemsLayout
@@ -419,42 +418,41 @@
             </ScrollView>
             <!--#endregion-->
 
-            <BoxView
-                Grid.Row="0"
-                Grid.RowSpan="5"
-                Margin="-16,0,-16,-8"
+            <!--#region Loading-->
+            <Border
+                x:Name="borderLoading"
+                HorizontalOptions="FillAndExpand"
                 IsEnabled="{Binding IsLoading}"
-                IsVisible="{Binding IsLoading}">
-                <BoxView.Background>
+                IsVisible="{Binding IsLoading}"
+                StrokeThickness="0"
+                Style="{StaticResource vsm_orientation_borderLoading}"
+                VerticalOptions="FillAndExpand">
+                <Border.Background>
                     <LinearGradientBrush EndPoint="0,1">
                         <GradientStop Offset="0" Color="{StaticResource col_prim}" />
                         <GradientStop Offset="0.5" Color="{StaticResource col_sec}" />
                     </LinearGradientBrush>
-                </BoxView.Background>
-            </BoxView>
+                </Border.Background>
 
-            <VerticalStackLayout
-                Grid.Row="0"
-                Grid.RowSpan="5"
-                Margin="-16,0,-16,-8"
-                HorizontalOptions="Center"
-                IsEnabled="{Binding IsLoading}"
-                IsVisible="{Binding IsLoading}"
-                Spacing="10"
-                VerticalOptions="Center">
+                <VerticalStackLayout
+                    HorizontalOptions="Center"
+                    Spacing="10"
+                    VerticalOptions="Center">
 
-                <ActivityIndicator
-                    HeightRequest="50"
-                    IsRunning="{Binding IsLoading}"
-                    WidthRequest="50"
-                    Color="White" />
+                    <ActivityIndicator
+                        HeightRequest="50"
+                        IsRunning="{Binding IsLoading}"
+                        WidthRequest="50"
+                        Color="White" />
 
-                <Label
-                    HorizontalTextAlignment="Center"
-                    Style="{StaticResource TxtSubtitle1_1}"
-                    Text="Loading"
-                    TextColor="White" />
-            </VerticalStackLayout>
+                    <Label
+                        HorizontalTextAlignment="Center"
+                        Style="{StaticResource TxtSubtitle1_1}"
+                        Text="Loading"
+                        TextColor="White" />
+                </VerticalStackLayout>
+            </Border>
+            <!--#endregion-->
         </Grid>
         <!--#endregion-->
     </ContentPage.Content>

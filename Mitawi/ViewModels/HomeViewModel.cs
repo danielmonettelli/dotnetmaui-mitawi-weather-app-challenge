@@ -36,18 +36,18 @@ public partial class HomeViewModel : BaseViewModel
     }
 
     [RelayCommand]
-    private void SelectedHourly(Hourly hourly)
+    private async Task SelectedHourly(Hourly hourly)
     {
         if (hourly is not null)
         {
             IsAnimationSkeleton = true;
 
-            Task.Delay(1000).ContinueWith((t) =>
+            MyHourly = hourly;
+
+            await Task.Delay(1000).ContinueWith((t) =>
             {
                 IsAnimationSkeleton = false;
             });
-
-            MyHourly = hourly;
         }
     }
 
@@ -82,7 +82,10 @@ public partial class HomeViewModel : BaseViewModel
         // Get current time schedule
         MyHourly = Hourlies.ElementAt(0);
 
-        IsLoading = false;
+        await Task.Delay(600).ContinueWith((t) =>
+        {
+            IsLoading = false;
+        });
     }
 
 }
