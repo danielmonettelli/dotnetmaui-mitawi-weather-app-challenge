@@ -35,6 +35,7 @@
                 sk:Skeleton.Hide="True"
                 sk:Skeleton.IsBusy="{Binding IsAnimationSkeleton}"
                 BackgroundColor="{StaticResource col_thirt}"
+                StrokeShape="{RoundRectangle CornerRadius='0,0,43,43'}"
                 StrokeThickness="0"
                 Style="{StaticResource vsm_orientation_topLayerLower1}">
                 <Border.Shadow>
@@ -44,9 +45,6 @@
                         Radius="45"
                         Offset="20,20" />
                 </Border.Shadow>
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="0,0,43,43" />
-                </Border.StrokeShape>
             </Border>
             <!--#endregion-->
 
@@ -58,11 +56,9 @@
                                                             Parameter='0.3'}"
                 sk:Skeleton.IsBusy="{Binding IsAnimationSkeleton}"
                 Stroke="{StaticResource col_twel}"
-                StrokeThickness="3"
+                StrokeShape="{RoundRectangle CornerRadius='0,0,45,45'}"
+                StrokeThickness="0"
                 Style="{StaticResource vsm_orientation_topLayerHigher2}">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="0,0,45,45" />
-                </Border.StrokeShape>
                 <Border.Background>
                     <LinearGradientBrush EndPoint="0,1">
                         <GradientStop Offset="0" Color="{StaticResource col_prim}" />

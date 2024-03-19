@@ -21,7 +21,7 @@
 		<Nullable>enable</Nullable>
 
 		<!-- Display name -->
-		<ApplicationTitle>Mitawi</ApplicationTitle>
+		<ApplicationTitle>Mitawi Weather</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.danielmonettelli.mitawi</ApplicationId>
